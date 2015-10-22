@@ -1,0 +1,51 @@
+@import 'typo';
+@import 'variables';
+@import 'mixins';
+
+/* Universal */
+
+body {
+	height: auto;
+}
+
+.center {
+	text-align: center;
+}
+
+/* Layout */
+.main_container {
+	background-color: $main_color;
+}
+
+#home {
+	.container {		
+		@include vertical_align;
+		z-index: 100;
+		height: 20em;
+		margin-top: 25%;
+		background: $third_color;
+		h1, p {color: white;}
+	}
+	ul{
+		list-style: none;
+		li {
+			display: inline-block;
+			background: $second_color;
+			color: white;
+		}
+	}
+}
+
+
+/* footer */
+
+.footer {	
+	width: 100%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: $complementary_color;	
+	p {
+		text-align: center;
+		color: white;
+	}
+}

@@ -1,0 +1,13 @@
+@mixin vertical_align {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin bg_size_cover {
+	-webkit-background-size: cover;
+	-moz-background-size: 	 cover;
+	-o-background-size: 		 cover;
+	background-size:  			 cover;
+}
