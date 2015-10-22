@@ -19,7 +19,9 @@ group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -27,8 +29,7 @@ group :development do
 end
 
 group :test do
-	gem 'faker'
-	gem 'capybara'
+	gem 'faker'	
 	gem 'guard-rspec'
 	gem 'launchy'
 end
