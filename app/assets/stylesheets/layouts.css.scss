@@ -132,15 +132,6 @@ input {
 	}
 }
 
-.alert-box {
-	border-width: 0 0 0 0.35rem;
-	&.alert {
-		border-left-color: $complementary_color-r;
-    background-color: scale-color($complementary_color-r, $lightness: 40%);
-	}
-}
-
-
 /* footer */
 
 .footer {	
@@ -158,6 +149,18 @@ input {
 }
 
 /* Miscellaneous */
+
+.alert-box {
+	border-width: 0 0 0 0.35rem;
+	&.alert {
+		border-left-color: $complementary_color-r;
+    background-color: scale-color($complementary_color-r, $lightness: 40%);
+	}
+}
+
+#flash {
+	margin-top: 1em;
+}
 
 .debug_dump {
 	clear:both;
