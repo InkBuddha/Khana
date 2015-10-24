@@ -6,15 +6,24 @@
 
       <aside class="left-off-canvas-menu">        
         <ul class="off-canvas-list">
-          <li class="nav-item"><%= link_to 'Calendar', '#', class: 'is-active' %></li>
-          <li class="nav-item"><%= link_to 'My recipes', '#' %></li>
-          <li class="nav-item"><%= link_to 'Shopping list', '#' %></li>
+          <li class="nav-item">
+          	<%= link_to ('<i class="fa fa-calendar"></i> Calendar').html_safe, 
+          							 '#' %>
+          </li>
+          <li class="nav-item">
+          	<%= link_to ('<i class="fa fa-cutlery"></i> My recipes').html_safe, 
+          							 '#' %>
+          </li>
+          <li class="nav-item">
+          	<%= link_to ('<i class="fa fa-shopping-cart"></i> Shopping list').html_safe, 
+          							 '#' %>
+          </li>
         </ul>
       </aside>
 
 			<div id="show_user">
 				<div class="row">
-					<aside class="large-3 columns">
+					<aside class="large-3 large-centered columns">
 						<section class="user_info">
 							<h1><%= @user.name %></h1>
 						</section>

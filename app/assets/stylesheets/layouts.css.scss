@@ -21,11 +21,14 @@ body {
 	.content {		
 		@include vertical_align;
 		z-index: 100;
-		height: 15em;
 		margin-top: 25%;
 		background: $third_color_g;
 		border-radius: 5px;
-		h1 {text-transform: uppercase;}
+		ul { padding-bottom: 1em;}
+		h1 {
+			padding-top: 1em;
+			text-transform: uppercase;
+		}
 		h1, p {color: white;}
 	}
 	ul{
@@ -81,6 +84,18 @@ body {
 	color: $main_color_g;
 }
 
+.off-canvas-list {
+	i.fa {
+		display: inline-block;
+		line-height: 14px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	a { 
+		display: inline-block;;
+	}
+}
+
 .side-nav {
 	li {
 		list-style: none;
@@ -98,7 +113,7 @@ body {
   .menu {
     float: left;
     display: block;
-    margin: 2.5rem 2.5rem;
+    margin: 1rem 1.5rem;
   }  
 }
 
