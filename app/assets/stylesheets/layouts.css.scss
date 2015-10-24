@@ -14,11 +14,11 @@ body {
 
 /* Layout */
 .main_container {
-	background-color: $main_color_g;
+	background-color: white;
 }
 
 #home {
-	.container {		
+	.content {		
 		@include vertical_align;
 		z-index: 100;
 		height: 15em;
@@ -48,7 +48,7 @@ body {
 }
 
 #signup {
-	.container {
+	.content {
 		// display: block;
 		background: $third_color_g;
 		border-radius: 5px; 
@@ -60,6 +60,46 @@ body {
 		margin-bottom: 0.5em;
 		padding-top: 1em;
 	}
+}
+
+/* navigation */
+
+#logo {
+	float: left;
+	margin-left: 20px;
+	font-size: 1.5em;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.fa-bars {
+	color: $main_color_g;
+}
+
+.side-nav {
+	li {
+		list-style: none;
+		a {
+			color: white !important;
+		}
+	}
+}
+
+#show_user {
+	height: 85.2vh;
+}
+
+.left-off-canvas-toggle {
+  .menu {
+    float: left;
+    display: block;
+    margin: 2.5rem 2.5rem;
+  }  
 }
 
 /* sidebar */
@@ -158,9 +198,9 @@ input {
 	}
 }
 
-#flash {
-	margin-top: 1em;
-}
+// #flash {
+// 	margin-top: 1em;
+// }
 
 .debug_dump {
 	clear:both;

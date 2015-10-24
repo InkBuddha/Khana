@@ -1,8 +1,27 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-	<aside class="large-3 columns">
-		<section class="user_info">
-			<h1><%= @user.name %></h1>
-		</section>
-	</aside>
+<%= render 'layouts/top_nav' %>
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    <a class="left-off-canvas-toggle" href="#" ><i class="fa fa-bars fa-3x menu"></i></a>
+
+      <aside class="left-off-canvas-menu">        
+        <ul class="off-canvas-list">
+          <li class="nav-item"><%= link_to 'Calendar', '#', class: 'is-active' %></li>
+          <li class="nav-item"><%= link_to 'My recipes', '#' %></li>
+          <li class="nav-item"><%= link_to 'Shopping list', '#' %></li>
+        </ul>
+      </aside>
+
+			<div id="show_user">
+				<div class="row">
+					<aside class="large-3 columns">
+						<section class="user_info">
+							<h1><%= @user.name %></h1>
+						</section>
+					</aside>
+				</div>
+			</div>
+
+		<a class="exit-off-canvas"></a>
+	</div>
 </div>
