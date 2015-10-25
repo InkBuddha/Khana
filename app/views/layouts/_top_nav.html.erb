@@ -4,20 +4,22 @@
 			<h1><%= link_to "Khana", root_path, id: "logo" %></h1>
 		<li>
 	</ul>
+	<% if logged_in? %>
 		<nav class="top-bar-section">
 			<ul class="right">
 				<!--  -->
 				<li class="has-dropdown">
-					<a href="#">Account</a>
+					<a href="#"><%= @current_user.name %>'s account</a>
 					<ul class="dropdown">
-						<li><%= link_to "Profile", '#' %></li>
+						<li><%= link_to "Profile", current_user %></li>
 						<li><%= link_to "Settings", '#' %></li>
 						<li class="divider"></li>
-						<li><%= link_to "Log out", '#' %></li>
+						<li><%= link_to "Log out", logout_path, method: 'delete' %></li>
 					</ul>
 				</li>
 			</ul>
 		</nav>
+	<% end %>
 </header>
 		
 		

@@ -50,7 +50,7 @@ body {
 	}
 }
 
-#signup {
+#signup, #login {
 	.content {
 		// display: block;
 		background: $third_color_g;
@@ -62,6 +62,14 @@ body {
 		margin-top: 3em;
 		margin-bottom: 0.5em;
 		padding-top: 1em;
+	}
+}
+
+#login {
+	p { color: white;}
+	a {
+		color: $main_color_y;
+		font-weight: bold;
 	}
 }
 
@@ -185,6 +193,11 @@ input {
 		margin: 0 0 30px 0;
 		li {margin-left: 1em;	}
 	}
+}
+
+.checkbox span{
+	margin-left: 10px;
+	color: white;
 }
 
 /* footer */
