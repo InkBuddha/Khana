@@ -22,13 +22,8 @@
         <%= yield %>
       </div>
       <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
+      <!-- <%= debug(params) if Rails.env.development? %>-->
     </div>
 
-
-  <!-- Livereload (à virer en fin de dev si ça arrive un jour)-->
-  <script>
-    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
-  </script>
   </body>
 </html>
