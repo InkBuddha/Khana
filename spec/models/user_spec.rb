@@ -2,29 +2,50 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do	
 
-  before { @user = User.new(name: "Example User", email: "user@example.com") }
-  subject {@user}
-  it { should respond_to(:name) }
-  it { should respond_to(:email) }
+	
+	it "is valid with a firstname, email, password and password confirmation" do
+	  user = User.new(
+	  	name: 'Example',
+	  	email: 'example@example.com',
+	  	password: 'foobar',
+	  	password_confirmation: 'foobar')
+	  expect(user).to be_valid
+	end
+	  
+	it "is invalid without a firstname" do
+		user = User.new(name: nil)
+		user.valid?
+		expect(user.errors[:name]).to include("can't be blank")
+	end
 
+	it "is invalid without an email adress" do
+		user = User.new(email: nil)
+		user.valid?
+		expect(user.errors[:email]).to include("can't be blank")
+	end
 
- #  it 'is invalid without a name' do
- #  	expect(build(:user, name: nil)).to_not be_valid
- #  end
+	it "is invalid without a password" do
+		user = User.new(password: nil)
+		user.valid?
+		expect(user.errors[:password]).to include("can't be blank")
+	end
 
- #  it 'is invalid without an email' do
- #  	expect(build(:user, email: nil)).to_not be_valid
- #  end
+	it "is invalid if password and password confirm are different" do
+		user = User.new(
+			name: 'Jane', email: 'jane@example.com', password: 'foobar',
+																							 password_confirmation: 'foofoo')
+		user.valid?
+		expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+	end
 
- #  describe "when name format is invalid" do
-	#   it "should be invalid" do
-	#   	expect(build(:user, name: "a" * 51)).to_not be_valid
-	#   end
-	# end
-
-	# describe "when email format is invalid" do
-	#   it "should be invalid" do
-	#   	expect(build(:user, email: "a" * 244 + "@example.com")).to_not be_valid
-	#   end
-	# end
+	it "is invalid with a duplicate email address" do
+		User.create(
+			name: 'Jane', email: 'jane@example.com', password: 'foobar',
+																							 password_confirmation: 'foobar')
+		user = User.new(
+			name: 'Joe', email: 'jane@example.com', password: 'foofoo',
+																							password_confirmation: 'foofoo')
+		user.valid?
+		expect(user.errors[:email]).to include("has already been taken")
+	end
 end

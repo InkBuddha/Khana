@@ -12,11 +12,11 @@ RSpec.describe StaticPagesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    it "returns right title" do
-      get :home
-      assign(:title, "Khana - Meal Planner")
-      expect(response).to eql("Khana - Meal Planner")
-    end   
+    # it "returns right title" do
+    #   get :home
+    #   assign(:title, "Khana - Meal Planner")
+    #   expect(response).to eql("Khana - Meal Planner")
+    # end   
   end
 
   describe "GET #about" do
