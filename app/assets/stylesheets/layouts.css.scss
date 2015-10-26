@@ -50,7 +50,7 @@ body {
 	}
 }
 
-#signup, #login {
+#signup, #login, #forgot_password, #reset_password {
 	.content {
 		// display: block;
 		background: $third_color_g;
@@ -70,6 +70,9 @@ body {
 	a {
 		color: $main_color_y;
 		font-weight: bold;
+	}
+	span a {
+		font-size: 12px;
 	}
 }
 
