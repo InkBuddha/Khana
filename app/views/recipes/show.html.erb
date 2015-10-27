@@ -1,0 +1,26 @@
+<div id="recipes">
+	<div class="row">			
+		<div class="large-5 columns">
+			<h1><%= @recipe.name %></h1>
+			<h4><%= @recipe.origin %></h4>
+			<p class="time">
+				Prep:<%= @recipe.prep_time %>, Cuisson:<%= @recipe.cook_time %>
+			</p>
+			<p class="main_ingr"><%= @recipe.main_ingredient %></p>
+		</div>
+		<div class="large-7 columns">
+			<p class="description"><%= @recipe.description %></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-5 columns">
+			<h2>Ingredients</h2>
+				<% @ingredients.each do |ingredient| %>
+					<p class='ingredient'><%= ingredient.name %></p>
+				<% end %>
+		</div>
+	</div>
+	
+
+</div>

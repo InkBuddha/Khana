@@ -1,0 +1,18 @@
+<div id="recipe_index" class="row">
+	<div class="large-12 columns">
+	
+		
+		
+			<h1>Mes recettes</h1>
+			<% @recipes.each do |recipe| %>
+			<div class="large-4 columns">
+				<h3><%= recipe.name %></h3>
+				<p class="time"><%= recipe.prep_time + " " + recipe.cook_time %></p>
+				<p class="origin"><%= recipe.origin %></p>
+				<%= link_to "Voir la recette", recipe_path(recipe) %>
+			</div>
+			<% end %>		
+		</div>
+
+
+</div>
