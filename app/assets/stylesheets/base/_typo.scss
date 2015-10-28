@@ -1,5 +1,18 @@
+// Fonts import
+
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100,300);
+
+// Fonts variables
+
+$title_font: 'Amatic SC', cursive;
+$sub_title_font: 'Josefin Slab', serif;
+
+// Global
 h1, h2, h3, h4, h5, h6 {line-height: 1;}
 
 .center {
 	text-align: center;
 }
+
+

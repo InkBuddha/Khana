@@ -1,3 +1,41 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//OFF CANVAS NAV
+.fa-bars {
+	color: $light_grass;
+}
+
+.off-canvas-list {
+	i.fa {
+		display: inline-block;
+		line-height: 14px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	a { 
+		display: inline-block;;
+	}
+}
+
+.side-nav {
+	li {
+		list-style: none;
+		a {
+			color: white !important;
+		}
+	}
+}
+
+#show_user {
+	height: 85.2vh;
+}
+
+.left-off-canvas-toggle {
+  .menu {
+    float: left;
+    display: block;
+    margin: 1rem 1.5rem;
+  }  
+}

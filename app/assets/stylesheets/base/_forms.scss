@@ -7,25 +7,19 @@ input, textarea, select, .uneditable-input {
 
 input {
 	height: auto !important;
+	background-color: rgba(0, 0, 0, 0.5) !important;
+	font-weight: 400;
+	border: 3px solid white !important;
+	border-radius: 5px !important;
 }
 
 // Change placeholder color for =/= browser
-::-webkit-input-placeholder {
-   color: #999;
-}
+::-webkit-input-placeholder { color: white !important; }
+:-moz-placeholder { color: white !important; } /* Firefox 18- */
+::-moz-placeholder { color: white !important; } /* Firefox 19+ */
+:-ms-input-placeholder { color: white !important; }
 
-:-moz-placeholder { /* Firefox 18- */
-   color: #999;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #999;  
-}
-
-:-ms-input-placeholder {  
-   color: #999;  
-}
-
+// Centre le boutons sous le formulaire
 .btn_holder { text-align: center;}
 
 #error_explanation {

@@ -6,21 +6,25 @@ body {
 
 /* Layout */
 .main_container {
-	background-color: white;
+	background: url(salad.jpg) white no-repeat center center fixed;
+	@include bg_size_cover;
+	height: 100vh;
+	@include vertical_align;
 }
 
 #home {
 	.content {		
-		@include vertical_align;
 		z-index: 100;
 		margin-top: 25%;
 		background: $third_color_g;
 		border-radius: 5px;
 		ul { padding-bottom: 1em;}
 		h1 {
+			font-family: $title_font;
 			padding-top: 1em;
 			text-transform: uppercase;
 		}
+		p {font-family: $sub_title_font; }
 		h1, p {color: white;}
 	}
 	ul{
@@ -47,28 +51,41 @@ body {
 #forgot_password, 
 #reset_password {
 	.content {
-		// display: block;
-		background: $third_color_g;
+		width: 120%;
+		background: rgba(0, 0, 0, 0.5);
 		border-radius: 5px; 
 	}
 	h1{
 		color: white;
 		text-align: center;
-		margin-top: 3em;
-		margin-bottom: 0.5em;
+		// margin-top: 3em;
+		margin-bottom: 1.5em;
 		padding-top: 1em;
 	}
 }
 
-#login {
-	p { color: white;}
+#login {	
+	p { 
+		text-align: center;
+		color: white;
+	}
 	a {
 		color: $main_color_y;
 		font-weight: bold;
 	}
+	input {margin-bottom: 0;}
 	span a {
+		padding-top: 0;
 		font-size: 12px;
 	}
+	#checkbox { 
+		text-align: center;
+		margin-top: 1em;
+	}
+	#submit_btn, p {margin-top: 2em;}
+	.form_field {
+		margin-left: 1.5em;
+		margin-right: 1.5em;}
 }
 
 /* navigation */
@@ -84,43 +101,6 @@ body {
 	&:hover {
 		text-decoration: none;
 	}
-}
-
-.fa-bars {
-	color: $main_color_g;
-}
-
-.off-canvas-list {
-	i.fa {
-		display: inline-block;
-		line-height: 14px;
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-	a { 
-		display: inline-block;;
-	}
-}
-
-.side-nav {
-	li {
-		list-style: none;
-		a {
-			color: white !important;
-		}
-	}
-}
-
-#show_user {
-	height: 85.2vh;
-}
-
-.left-off-canvas-toggle {
-  .menu {
-    float: left;
-    display: block;
-    margin: 1rem 1.5rem;
-  }  
 }
 
 /* sidebar */
@@ -160,14 +140,14 @@ aside {
 
 .footer {	
 	height: 10vh;	
-	background: $third_color_g;	
+	background: $dark_brown;	
 	p {
 		padding-top: 2em;
 		text-align: center;
 		color: white;
 	}
 	a {
-		color: $main_color_y;
+		color: $light_grass;
 		font-weight: bold;
 	}
 }
