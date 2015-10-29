@@ -1407,7 +1407,7 @@ $topbar-bg-color: transparent;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: rem-calc(45);
+$topbar-height: rem-calc(60);
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1422,7 +1422,7 @@ $topbar-bg: $topbar-bg-color;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg: $topbar-bg;
+// $topbar-link-bg: rgba(0, 0, 0, 0.5);
 // $topbar-link-bg-hover: #44D764;
 // $topbar-link-bg-color-hover: #44D764;
 // $topbar-link-bg-active: #44D764;
