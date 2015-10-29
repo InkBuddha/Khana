@@ -14,20 +14,23 @@
   </head>
 
   <body>
-
-    <div class="main_container">
-      <div class="container">
-        <!-- TOP_NAV -->
+        
+    <div class="main_container">      
+      <!-- TOP_NAV -->      
         <%= render 'layouts/top_nav' %>
+
+      <div class="content">
         <!-- CONTENT -->
         <%= render 'shared/flash' %>
-        <%= yield %>
+
+          <%= yield %>
       </div>
 
-        <%= render 'layouts/footer' %>
+
+       
         <!-- <%= debug(params) if Rails.env.development? %>-->            
     </div>
- 
+  <%= render 'layouts/footer' %>
 
   </body>
 </html>

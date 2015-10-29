@@ -464,11 +464,11 @@ $button-font-weight: bold;
 // $button-function-factor: -20%;
 
 // We use these to control button border styles.
-// $button-border-width: 0;
+$button-border-width: 3px;
 // $button-border-style: solid;
-$button-bg-color: #26D74D; // light yellow: #fbcf61;
+$button-bg-color: rgba(0, 0, 0, 0.5);
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
-// $button-border-color: $button-bg-hover;
+$button-border-color: white;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
 // $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor);
@@ -481,7 +481,7 @@ $button-bg-color: #26D74D; // light yellow: #fbcf61;
 // $info-button-border-color: $info-button-bg-hover;
 
 // We use this to set the default radius used throughout the core.
-// $button-radius: $global-radius;
+// $button-radius: 5px;
 // $button-round: $global-rounded;
 
 // We use this to set default opacity and cursor for disabled buttons.
@@ -568,7 +568,7 @@ $button-bg-color: #26D74D; // light yellow: #fbcf61;
 // $f-dropdown-font-size: rem-calc(14);
 // $f-dropdown-list-padding: rem-calc(5, 10);
 // $f-dropdown-line-height: rem-calc(18);
-$f-dropdown-list-hover-bg: #44D764;
+// $f-dropdown-list-hover-bg: #44D764;
 // $dropdown-mobile-default-float: 0;
 
 // We use this to control the styles for when the dropdown has custom content.
@@ -1403,8 +1403,8 @@ $off-canvas-overlay-box-shadow: 0px 0 0px;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #A0D468;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: transparent;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: rem-calc(45);
@@ -1422,12 +1422,12 @@ $topbar-bg-color: #A0D468;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: #44D764;
+$topbar-link-bg: $topbar-bg;
+// $topbar-link-bg-hover: #44D764;
 // $topbar-link-bg-color-hover: #44D764;
-$topbar-link-bg-active: #44D764;
+// $topbar-link-bg-active: #44D764;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
-// $topbar-link-font-family: $body-font-family;
+$topbar-link-font-family: 'Droid Serif', serif;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: ($topbar-height / 3);
 // $topbar-back-link-size: rem-calc(18);
@@ -1436,21 +1436,21 @@ $topbar-link-bg-active: #44D764;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #1E9C3A;
+// $topbar-dropdown-bg: #1E9C3A;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
-$topbar-dropdown-link-bg: #1E9C3A;
-$topbar-dropdown-link-bg-hover: #44D764;
+// $topbar-dropdown-link-bg: #1E9C3A;
+// $topbar-dropdown-link-bg-hover: #44D764;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
 // $topbar-dropdown-toggle-alpha: .4;
 
-$topbar-dropdown-label-color: #44D764;
+// $topbar-dropdown-label-color: #44D764;
 // $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: $font-weight-bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
-$topbar-dropdown-label-bg: #1E9C3A;
+// $topbar-dropdown-label-bg: #1E9C3A;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;

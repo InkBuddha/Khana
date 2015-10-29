@@ -1,36 +1,10 @@
 <% provide(:title, @user.name) %>
 
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-    <a class="left-off-canvas-toggle" href="#" ><i class="fa fa-bars fa-3x menu"></i></a>
-
-      <aside class="left-off-canvas-menu">        
-        <ul class="off-canvas-list">
-          <li class="nav-item">
-          	<%= link_to ('<i class="fa fa-calendar"></i> Calendar').html_safe, 
-          							 '#' %>
-          </li>
-          <li class="nav-item">
-          	<%= link_to ('<i class="fa fa-cutlery"></i> My recipes').html_safe, 
-          							 recipes_path %>
-          </li>
-          <li class="nav-item">
-          	<%= link_to ('<i class="fa fa-shopping-cart"></i> Shopping list').html_safe, 
-          							 '#' %>
-          </li>
-        </ul>
-      </aside>
-
-			<div id="show_user">
-				<div class="row">
-					<aside class="large-3 large-centered columns">
-						<section class="user_info">
-							<h1><%= @user.name %></h1>
-						</section>
-					</aside>
-				</div>
-			</div>
-
-		<a class="exit-off-canvas"></a>
+<div id="show_user" class="row">
+	<div class="large-8 large-centered columns user_info">
+		
+			<h1><%= @user.name %></h1>
+		
 	</div>
 </div>
+

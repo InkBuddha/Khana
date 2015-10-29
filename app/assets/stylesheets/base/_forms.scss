@@ -3,21 +3,35 @@
 input, textarea, select, .uneditable-input {
 	margin-bottom:15px;
 	@include box_sizing;
-}
-
-input {
+	color: white;
 	height: auto !important;
 	background-color: rgba(0, 0, 0, 0.5) !important;
 	font-weight: 400;
 	border: 3px solid white !important;
 	border-radius: 5px !important;
+	&:focus {color: white;}
 }
+
+.form_field {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+}
+
+.form_container { padding-left: 1.5em; padding-right: 1.5em;}
 
 // Change placeholder color for =/= browser
 ::-webkit-input-placeholder { color: white !important; }
 :-moz-placeholder { color: white !important; } /* Firefox 18- */
 ::-moz-placeholder { color: white !important; } /* Firefox 19+ */
 :-ms-input-placeholder { color: white !important; }
+
+#login {
+	input {margin-bottom: 0;}
+	span a {
+		padding-top: 0;
+		font-size: 12px;
+	}
+}
 
 // Centre le boutons sous le formulaire
 .btn_holder { text-align: center;}
