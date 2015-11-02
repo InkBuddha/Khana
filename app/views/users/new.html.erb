@@ -1,7 +1,7 @@
 <% provide(:title, 'Sign up') %>
 
 <div id="signup" class="row form_container">
-	<div class="large-12 columns content">
+	<div class="small-12 columns content">
 		<h1>Sign Up</h1>
 
 <!-- FORM CONTAINER -->
@@ -9,18 +9,18 @@
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_message' %>
 			<div class="row">
-				<div class="large-6 columns form_field">
+				<div class="small-6 columns form_field">
 					<%= f.text_field :name, placeholder: 'User Name', class: 'form_field' %>
 				</div>
-				<div class="large-6 columns form_field">
+				<div class="small-6 columns form_field">
 					<%= f.email_field :email, placeholder: 'E-mail', class: 'form_field' %>
 				</div>
 			</div>
 			<div class="row">
-				<div class="large-6 columns form_field">
+				<div class="small-6 columns form_field">
 					<%= f.password_field :password, placeholder: 'Password',class: 'form_field' %>
 				</div>
-				<div class="large-6 columns form_field">
+				<div class="small-6 columns form_field">
 					<%= f.password_field :password_confirmation, placeholder: 'Password confirmation', 
 																											 class: 'form_field' %>
 				</div>

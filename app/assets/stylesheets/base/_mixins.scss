@@ -8,6 +8,7 @@
 @mixin bg_size_cover {
 	-webkit-background-size: cover;
 	-moz-background-size: 	 cover;
+	-ms-background-size: 	 cover;
 	-o-background-size: 		 cover;
 	background-size:  			 cover;
 }
@@ -15,6 +16,7 @@
 @mixin box_sizing {	
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
 }
@@ -32,5 +34,5 @@
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
-  -transition: opacity 0.2s;
+  transition: opacity 0.2s;
 }
