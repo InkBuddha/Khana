@@ -1,5 +1,7 @@
 /* Layout */
 .main_container {
+	margin: 0;
+	padding: 0;
 	background: url(salad.jpg) white no-repeat center center fixed;
 	@include bg_size_cover;
 	height: 100%;
@@ -85,6 +87,25 @@
 		}
 	}
 
+	// Recipes > index
+	#recipe_index {
+		background: white;
+		margin-top: 5%;
+		padding: 1.5em;
+		@include box_shadow;
+		h1 { 
+			margin: 0.5em;
+			text-align: center;
+		}
+		.recipe_index {
+			margin: 5px;
+			padding: 1em;
+			min-height: 250px;
+			border: 1px solid $dark_brown;
+			@include box_shadow;
+		}
+	}
+
 /* navigation */
 
 #logo {
@@ -120,6 +141,7 @@ header {
 .dropdown {
 	li {
 		text-align: center;
+		background-color: $semi_transparent_black !important;
 	}
 }
 

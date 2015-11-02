@@ -18,19 +18,14 @@
     <div class="main_container">      
       <!-- TOP_NAV -->      
         <%= render 'layouts/top_nav' %>
-    <div class="row">
-      <div class="large-12 columns">
+    
         <div class="content">
           <!-- CONTENT -->
           <%= render 'shared/flash' %>
 
             <%= yield %>
-        </div>
-      </div>
-    </div>
-
-
-       
+        
+        </div>       
         <!-- <%= debug(params) if Rails.env.development? %>-->            
     </div>
   <%= render 'layouts/footer' %>
