@@ -2,23 +2,25 @@
 	<div class="small-12 columns">		
 		<h1>My recipes</h1>
 
-			<div class="row">
+			
 			<% @recipes.each do |recipe| %>
-				<div class="small-4 small-uncollapse columns recipe_index end">
-					<h3><%= recipe.name %></h3>
-					<div class="row">
-						<div class="small-6 columns">
-							<p class="time left">Prep: <%= recipe.prep_time %></p>
+				<ul class="small-block-grid-2 large-block-grid-3 recipe_index">
+					<li>
+						<h3><%= recipe.name %></h3>
+						<div class="row">
+							<div class="small-6 columns">
+								<p class="time left">Prep: <%= recipe.prep_time %></p>
+							</div>
+							<div class="small-6 columns">
+								<p class="time right">Cook: <%=recipe.cook_time %></p>
+							</div>						
 						</div>
-						<div class="small-6 columns">
-							<p class="time right">Cook: <%=recipe.cook_time %></p>
-						</div>
-					</div>
-					<p class="origin">From: <%= recipe.origin %></p>
-					<%= link_to "See recipe", recipe_path(recipe) %>
-				</div>
+						<p class="origin">From: <%= recipe.origin %></p>
+						<%= link_to "See recipe", recipe_path(recipe) %>
+					</li>
+				</ul>
 			<% end %>	
-			</div>
+			
 
 	</div>
 </div>
