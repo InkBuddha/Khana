@@ -6,6 +6,8 @@ User.create!(name: "Example User",
 						 activated: true,
 						 activated_at: Time.zone.now)
 
+
+
  # Liste des ingrédients
 i1 = Ingredient.create(name: "Pomme de terre", category: "Legume")
 i2 = Ingredient.create(name: "Graine de cumin", category: "Epices")
@@ -55,7 +57,18 @@ r3 = Recipe.create(name: "Soupe de nouilles thai", category: "Plat principal",
 									 bouilon. Attendre quelques minutes que les nouilles cuisent. Garnir la soupe
 									 suivant les préférences (piments, légumes, herbes fraiches, croutons, ...")
 
+#items
+item1 = Item.create(recipe_id: 1, ingredient_id: 1, amount: 1, measure: "kg")
+item2 = Item.create(recipe_id: 1, ingredient_id: 2, amount: 2, measure: "g")
+item3 = Item.create(recipe_id: 1, ingredient_id: 3, amount: 5, measure: "g")
+item4 = Item.create(recipe_id: 1, ingredient_id: 4, amount: 2, measure: "g")
+item5 = Item.create(recipe_id: 1, ingredient_id: 5, amount: 5, measure: "g")
+item6 = Item.create(recipe_id: 1, ingredient_id: 6, amount: 5, measure: "g")
+item7 = Item.create(recipe_id: 1, ingredient_id: 7, amount: 5, measure: "g")
+item8 = Item.create(recipe_id: 1, ingredient_id: 8, amount: 5, measure: "g")
+item9 = Item.create(recipe_id: 1, ingredient_id: 9, amount: 5, measure: "g")
+
  # Associe ingrédients aux recettes
-r1.ingredients << [i1, i2, i3, i4, i5, i6, i7, i8, i9]
-r2.ingredients << [i10, i8, i11, i12, i6]
-r3.ingredients << [i13, i14, i15, i16, i17, i18, i19, i5]
+# r1.ingredients << [i1, i2, i3, i4, i5, i6, i7, i8, i9]
+# r2.ingredients << [i10, i8, i11, i12, i6]
+# r3.ingredients << [i13, i14, i15, i16, i17, i18, i19, i5]
