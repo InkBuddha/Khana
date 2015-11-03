@@ -5,14 +5,19 @@
 // Global
 h1, h2, h3, h4, h5, h6 {line-height: 1;}
 
-.center {
-	text-align: center;
-}
+.left {float: left;}
+.right {float: right;}
+.center {text-align: center;}
 
+// Fonts families
 h1 {font-family: 'Parisienne', cursive;}
 body, .button {font-family: 'Droid Serif', serif;}
 #recipe_index {
 	h3 {font-family: 'Raleway';}
+}
+#recipes {
+	h1 {font-family: 'Raleway';}
+	h4 {font-family: 'Droid Serif', serif;}
 }
 
 

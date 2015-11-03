@@ -97,7 +97,8 @@ body {
 	// }
 
 	// Recipes > index
-	#recipe_index {
+	#recipe_index
+	 {
 		background: white;
 		margin-top: 5%;
 		margin-bottom: 5%;
@@ -114,6 +115,21 @@ body {
 			@include box_shadow;
 			li {
 				display: inline;}
+		}
+	}
+
+	#recipes {
+		margin-bottom: 5%;
+		margin-top: 5%;
+		.recipes_items {
+			background: white;
+			margin-top: 5%;
+			padding: 1.5em;
+			@include box_shadow;
+			.description {
+				text-align: justify;
+				text-justify: inter-word;
+			}
 		}
 	}
 
