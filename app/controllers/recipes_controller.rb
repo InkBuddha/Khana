@@ -7,8 +7,8 @@ class RecipesController < ApplicationController
 
 	def show
 		@items = @recipe.items
-		# @ingredient = @recipe.ingredients
-		@item = Ingredient.find(params[:id])
+		@ingredient = @recipe.ingredients
+		# @item = Ingredient.find(params[:id])
 	end
 
 	def new
@@ -22,7 +22,9 @@ class RecipesController < ApplicationController
 	private
 
 		def recipe_params
-			params.require(:recipe).permit(:name, :origin, :description)
+			params.require(:recipe).permit(:name, :category, :main_ingredient, 
+																		 :origin, :description, :prep_time, :cook_time,
+																		 items_attributes: [:amount, :measure])
 		end
 
 		def find_recipe

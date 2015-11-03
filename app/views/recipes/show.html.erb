@@ -23,9 +23,9 @@
 		<div class="row">
 			<div class="large-4 columns recipes_items">
 				<h2>Ingredients:</h2>
-					<% @items.each do |ingredient| %>
+					<% @ingredient.each do |ingredient| %>
 						<ul>
-							<li class='ingredient'><%= @item %></li>
+							<li class='ingredient'><%= ingredient.name %><%= ingredient.item.amount %></li>
 						</ul>
 					<% end %>
 			</div>
