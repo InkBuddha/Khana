@@ -1,14 +1,13 @@
 class RecipesController < ApplicationController
-	before_action :find_recipe, only: [:show]
+	# before_action :find_recipe, only: [:show]
 
 	def index
 		@recipes = Recipe.all
 	end
 
 	def show
-		@items = @recipe.items
+		@recipe = Recipe.find(params[:id])
 		@ingredient = @recipe.ingredients
-		# @item = Ingredient.find(params[:id])
 	end
 
 	def new
@@ -17,6 +16,13 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = Recipe.new(recipe_params)
+		if @recipe.save
+			flash[:success] = "Successfully created recipe"
+			redirect_to 'index'
+		else
+			flash[:error] = "Failed to create recipe"
+			render 'new'
+		end
 	end
 
 	private
@@ -24,10 +30,11 @@ class RecipesController < ApplicationController
 		def recipe_params
 			params.require(:recipe).permit(:name, :category, :main_ingredient, 
 																		 :origin, :description, :prep_time, :cook_time,
-																		 items_attributes: [:amount, :measure])
+																		 ingredient_attributes: [:name, 
+																		 item_attributes:[:amount, :measure]])
 		end
 
-		def find_recipe
-			@recipe = Recipe.find(params[:id])
-		end
+		# def find_recipe
+		# 	@recipe = Recipe.find(params[:id])
+		# end
 end

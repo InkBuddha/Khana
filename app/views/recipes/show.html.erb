@@ -25,7 +25,9 @@
 				<h2>Ingredients:</h2>
 					<% @ingredient.each do |ingredient| %>
 						<ul>
-							<li class='ingredient'><%= ingredient.name %><%= ingredient.item.amount %></li>
+							<li class='ingredient'>
+								<%= ingredient.name %>
+							</li>
 						</ul>
 					<% end %>
 			</div>
