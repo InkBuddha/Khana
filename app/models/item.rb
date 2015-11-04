@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
-  belongs_to :recipe
-  belongs_to :ingredient
+  belongs_to :recipe, polymorphic: true
+  belongs_to :ingredient, polymorphic: true
   
   accepts_nested_attributes_for :ingredient
 
