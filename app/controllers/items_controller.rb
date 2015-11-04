@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
 	private
 
 	def item_params
-		params.require(:items).permit(:amount, :measure,
-																	:ingredient_id, ingredient_attribute: [:name])
+		params.require(:item).permit(:amount, :measure,
+																	:ingredient_id, ingredients_attributes: [:name])
 	end
 end

@@ -31,12 +31,25 @@ class RecipesController < ApplicationController
 	private
 
 		def recipe_params
+			# Pas bon
 			params.require(:recipe).permit(:title, :description,
-																		 ingredients_attributes: [:name, 
-																		 items_attributes:[:amount, :measure]])
+										 ingredients_attributes: :name, {items_attributes: [:amount, :measure]})
 		end
 
-		# def find_recipe
-		# 	@recipe = Recipe.find(params[:id])
-		# end
+
+		# ============
+		# === HELP ===
+		# ============
+		#
+		# recipe: {
+		# 	title: "Fajitas",
+		# 	description: "Mexican sandwich",
+		# 	ingredients_attributes: [{
+		# 		name: "chicken",
+		# 		items_attributes: [{
+		# 			amout: 250,
+		# 			measure: "g"
+		# 			}]
+		# 		}]
+		# }
 end
