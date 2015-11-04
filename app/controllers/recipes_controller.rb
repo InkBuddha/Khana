@@ -7,18 +7,21 @@ class RecipesController < ApplicationController
 
 	def show
 		@recipe = Recipe.find(params[:id])
-		@ingredient = @recipe.ingredients
+		@items = Item.find_by(params[:recipe_id])
+
 	end
 
 	def new
 		@recipe = Recipe.new
+		@recipe.ingredients.build
+		@recipe.items.build
 	end
 
 	def create
 		@recipe = Recipe.new(recipe_params)
 		if @recipe.save
 			flash[:success] = "Successfully created recipe"
-			redirect_to 'index'
+			redirect_to @recipe
 		else
 			flash[:error] = "Failed to create recipe"
 			render 'new'
@@ -28,10 +31,9 @@ class RecipesController < ApplicationController
 	private
 
 		def recipe_params
-			params.require(:recipe).permit(:name, :category, :main_ingredient, 
-																		 :origin, :description, :prep_time, :cook_time,
-																		 ingredient_attributes: [:name, 
-																		 item_attributes:[:amount, :measure]])
+			params.require(:recipe).permit(:title, :description,
+																		 ingredients_attributes: [:name, 
+																		 items_attributes:[:amount, :measure]])
 		end
 
 		# def find_recipe

@@ -5,8 +5,9 @@ class Recipe < ActiveRecord::Base
 	accepts_nested_attributes_for :items
 	accepts_nested_attributes_for :ingredients
 
-	# # this allows things like @recipes = Recipe.using("cucumber")
- #  scope :using, lambda do |text| 
- #    joins(:ingredients).where("ingredients.name LIKE ?", "%#{text}%")
- #  end
+	  # === Schema Info
+   #  t.string   "title"
+   #  t.text     "description"
+   #  t.datetime "created_at",  null: false
+   #  t.datetime "updated_at",  null: false
 end

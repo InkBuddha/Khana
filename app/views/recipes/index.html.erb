@@ -6,16 +6,16 @@
 			<% @recipes.each do |recipe| %>
 				<ul class="small-block-grid-2 large-block-grid-3 recipe_index">
 					<li>
-						<h3><%= recipe.name %></h3>
+						<h3><%= recipe.title %></h3>
 						<div class="row">
 							<div class="small-6 columns">
-								<p class="time left">Prep: <%= recipe.prep_time %></p>
+								<p class="time left">Prep: N/A</p>
 							</div>
 							<div class="small-6 columns">
-								<p class="time right">Cook: <%=recipe.cook_time %></p>
+								<p class="time right">Cook: N/A</p>
 							</div>						
 						</div>
-						<p class="origin">From: <%= recipe.origin %></p>
+						<p class="origin">From: N/A</p>
 						<%= link_to "See recipe", recipe_path(recipe) %>
 					</li>
 				</ul>
