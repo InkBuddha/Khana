@@ -2,7 +2,8 @@ class Item < ActiveRecord::Base
   belongs_to :recipe, foreign_key: :recipe_id
   belongs_to :ingredient, foreign_key: :ingredient_id
   
-  accepts_nested_attributes_for :ingredients
+  accepts_nested_attributes_for :ingredient
+  accepts_nested_attributes_for :recipe
 
   VALID_MEASURES = %w[g kg oz cup tbsp]
   validates :measure, :inclusion => VALID_MEASURES

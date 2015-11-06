@@ -1,5 +1,4 @@
 class IngredientsController < ApplicationController
-	before_action :get_recipe
 
 	def index
 		@ingredients = Ingredients.all
@@ -30,11 +29,7 @@ class IngredientsController < ApplicationController
 	private
 
 		def ingredient_params
-			params.require(:ingredient).permit(:name, :ingredient_id,
-																				 items_attributes: [:amount, :measure])
+			params.require(:ingredient).permit(:name, items_attributes: :amount, :measure)
 		end
 
-		def get_recipe
-			@recipes = Recipe.find(params[:recipe_id])
-		end
 end

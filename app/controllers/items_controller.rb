@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+	before_action :get_recipe
 
 	def index
 		@recipes = Recipe.all
@@ -19,7 +20,9 @@ class ItemsController < ApplicationController
 	end
 
 	def create
-		@item = Item.new(item_params)
+		@ingredient = Ingredient.find(params[:ingredient_id])
+		@item = @ingredient.item.create(item_params)
+
 		if @item.save
 			flash[:success] = "Ingredient successfully added to the recipe"
 		else
@@ -46,8 +49,14 @@ class ItemsController < ApplicationController
 
 	private
 
-	def item_params
-		params.require(:item).permit(:amount, :measure,
-																	:ingredient_id, ingredients_attributes: [:name])
-	end
+		def item_params
+			params.require(:item).permit(ingredients_attributes: :name,
+																	 :amount, :measure,)
+		end
+
+		#Before filters
+
+		def get_recipe
+			@recipes = Recipe.find(params[:recipe_id])
+		end
 end

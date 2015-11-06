@@ -1,11 +1,16 @@
 <h1>New recipe</h1>
 
-<% form_for(@recipe) do |f| %>
+<%= form_for(@recipe) do |f| %>
 	<%= render 'shared/error_message' %>
 
 	<%= f.text_field :title, placeholder: 'Title' %>
 
 	<%= f.text_field :description, placeholder: 'Description' %>
+
+		<!-- NESTED FORM -->
+		<%= f.field_for :items do |item| %>
+		<!-- recipe items ingredients association -->
+		<% end %>
 
 	
 	<%= f.submit 'Create' %>

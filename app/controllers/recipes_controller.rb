@@ -7,14 +7,12 @@ class RecipesController < ApplicationController
 
 	def show
 		@recipe = Recipe.find(params[:id])
-		@items = Item.find_by(params[:recipe_id])
-
 	end
 
 	def new
 		@recipe = Recipe.new
-		@recipe.ingredients.build
-		@recipe.items.build
+		# @recipe.ingredients.build
+		# @recipe.items.build
 	end
 
 	def create
@@ -33,7 +31,7 @@ class RecipesController < ApplicationController
 		def recipe_params
 			# Pas bon
 			params.require(:recipe).permit(:title, :description,
-										 ingredients_attributes: :name, {items_attributes: [:amount, :measure]})
+										items_attributes: [:amount, :measure, {ingredients_attributes: :name }] )
 		end
 
 
@@ -44,12 +42,12 @@ class RecipesController < ApplicationController
 		# recipe: {
 		# 	title: "Fajitas",
 		# 	description: "Mexican sandwich",
-		# 	ingredients_attributes: [{
-		# 		name: "chicken",
-		# 		items_attributes: [{
-		# 			amout: 250,
-		# 			measure: "g"
-		# 			}]
+		# 	items_attributes: [{
+		# 		amout: 250,
+		# 		measure: "g"
+		# 		ingredients_attributes: [{
+		# 			name: "chicken"
 		# 		}]
+		# 	}]
 		# }
 end
