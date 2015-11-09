@@ -17,15 +17,10 @@ class ItemsController < ApplicationController
 	end
 
 	def create
-		@ingredient = Ingredient.find(params[:ingredient_id])
-		@item = @ingredient.item.create(item_params)
-
-		if @item.save
-			flash[:success] = "Ingredient successfully added to the recipe"
-		else
-			flash[:error] = "Failed to add this ingredient to the recipe"
-			render 'new'
-		end
+		@recipe = Recipe.find(params[:recipe_id])
+		# @ingredient = Ingredient.find(params[:ingredient_id])
+		@item = @recipe.item.ingredient.create(item_params)
+		@item.save
 	end
 
 	def update
@@ -47,8 +42,8 @@ class ItemsController < ApplicationController
 	private
 
 		def item_params
-			params.require(:item).permit(ingredients_attributes: :name,
-																	 :amount, :measure,)
+			params.require(:item).permit(:amount, :measure, :ingredient,
+																		ingredients_attributes: :name)
 		end
 
 		#Before filters

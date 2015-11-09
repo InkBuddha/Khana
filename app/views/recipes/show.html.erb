@@ -23,10 +23,11 @@
 		<div class="row">
 			<div class="large-4 columns recipes_items">
 				<h2>Ingredients:</h2>
-					<% @recipe.items.each do |item| %>
+					<% @recipe.items.each do |recipe_item| %>
 						<ul>
 							<li class='ingredient'>
-								<%= item.ingredient.name %>: <%= item.amount %> <%= item.measure %>
+								<%= recipe_item.ingredient.name %>: <%= recipe_item.amount %> 
+								<%= recipe_item.measure %>
 							</li>
 						</ul>
 					<% end %>

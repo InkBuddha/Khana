@@ -2,7 +2,7 @@ class Ingredient < ActiveRecord::Base
 	has_many :items
 	has_many :recipes, through: :items
 
-	accepts_nested_attributes_for :items
+	# accepts_nested_attributes_for :items
 
 		# === Schema Info
 	 #  t.string   "name"

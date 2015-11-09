@@ -4,7 +4,7 @@ class Item < ActiveRecord::Base
   
   accepts_nested_attributes_for :ingredient,
                                 reject_if: :all_blank
-  # accepts_nested_attributes_for :recipe
+  accepts_nested_attributes_for :recipe
 
   VALID_MEASURES = %w(pc L cl g kg oz cup tbsp)
   validates :measure, inclusion: VALID_MEASURES

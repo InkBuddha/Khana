@@ -62,6 +62,21 @@ item7 = Item.create(recipe_id: 1, ingredient_id: 7, amount: 5, measure: "g")
 item8 = Item.create(recipe_id: 1, ingredient_id: 8, amount: 5, measure: "g")
 item9 = Item.create(recipe_id: 1, ingredient_id: 9, amount: 5, measure: "g")
 
+item10 = Item.create(recipe_id: 2, ingredient_id: 10, amount: 1, measure: "kg")
+item11 = Item.create(recipe_id: 2, ingredient_id: 8, amount: 2, measure: "g")
+item12 = Item.create(recipe_id: 2, ingredient_id: 11, amount: 5, measure: "g")
+item13 = Item.create(recipe_id: 2, ingredient_id: 12, amount: 2, measure: "g")
+item14 = Item.create(recipe_id: 2, ingredient_id: 6, amount: 5, measure: "g")
+
+item15 = Item.create(recipe_id: 3, ingredient_id: 13, amount: 5, measure: "g")
+item16 = Item.create(recipe_id: 3, ingredient_id: 14, amount: 5, measure: "g")
+item17 = Item.create(recipe_id: 3, ingredient_id: 15, amount: 5, measure: "g")
+item18 = Item.create(recipe_id: 3, ingredient_id: 16, amount: 5, measure: "g")
+item19 = Item.create(recipe_id: 3, ingredient_id: 17, amount: 5, measure: "g")
+item20 = Item.create(recipe_id: 3, ingredient_id: 18, amount: 5, measure: "g")
+item21 = Item.create(recipe_id: 3, ingredient_id: 19, amount: 5, measure: "g")
+item22 = Item.create(recipe_id: 3, ingredient_id: 5, amount: 5, measure: "g")
+
  # Associe ingrédients aux recettes
 # r1.ingredients << [i1, i2, i3, i4, i5, i6, i7, i8, i9]
 # r2.ingredients << [i10, i8, i11, i12, i6]

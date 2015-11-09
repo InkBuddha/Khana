@@ -16,10 +16,9 @@ class IngredientsController < ApplicationController
 	end
 
 	def create
-		@recipe = Post.find(params[:recipe_id])
-		@ingredient = @recipe.ingredients.create(ingredient_params)
-
-		redirect_to recipe_path(@recipe)
+		this_recipe = Recipe.find(params[:recipe_id])
+		@item = this_recipe.ingredients.build(ingredient_params)
+		@ingredient = @item.build_ingredient(params[:ingredient])
 	end
 
 	def update
