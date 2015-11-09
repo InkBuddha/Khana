@@ -25,8 +25,7 @@ class RecipesController < ApplicationController
 
 	def destroy
 		@recipe.destroy
-
-		redirect_to root_path
+		redirect_to recipes_url
 	end
 
 	private
@@ -35,8 +34,15 @@ class RecipesController < ApplicationController
 			params.require(:recipe).permit(
 										:title, :description,
 										items_attributes: [:id, :amount, :measure, :_destroy, 
-										{ingredients_attributes: :name }] )
+										{ingredients_attributes: [:id, :name] }] )
 		end
+
+		# def recipe_params
+		# 	params.require(:recipe).permit(
+		# 								:title, :description,
+		# 								items_attributes: [:id, :amount, :measure, :_destroy, 
+		# 								{ingredients_attributes: :name }] )
+		# end
 
 		def get_recipe
 			@recipe = Recipe.find(params[:id])

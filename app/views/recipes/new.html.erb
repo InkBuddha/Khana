@@ -2,12 +2,12 @@
 	<div class="small-12 columns">
 		<h1>New recipe</h1>
 
-		<%= form_for(@recipe) do |f| %>
+		<%= simple_form_for @recipe do |f| %>
 			<fieldset id="recipe_meta">
 				<ul>
-					<li><%= f.text_field :title, placeholder: 'Title' %></li>
+					<li><%= f.input :title %></li>
 
-					<li><%= f.text_area :description, placeholder: 'Description' %></li>
+					<li><%= f.input :description, as: :text, input_html: { :rows => 13 }  %></li>
 				</ul>
 			</fieldset>
 
@@ -24,7 +24,7 @@
 								:wrap_object => Proc.new {|item| item.build_ingredient; item } %>					
 				</fieldset>
 			
-			<%= f.submit 'Create Recipe' %>
+			<%= f.button :submit %>
 		<% end %>
 	</div>
 </div>

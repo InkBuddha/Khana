@@ -6,7 +6,6 @@ class IngredientsController < ApplicationController
 	end
 
 	def show
-		@ingredients = Ingredient.find(params[:id])
 	end
 
 	def new
@@ -14,11 +13,13 @@ class IngredientsController < ApplicationController
 	end
 
 	def edit
-		@ingredients = Ingredient.find(params[:id])
 	end
 
 	def create
-		@ingredient = @recipe.ingredients.new(params[:ingredient])
+		@recipe = Post.find(params[:recipe_id])
+		@ingredient = @recipe.ingredients.create(ingredient_params)
+
+		redirect_to recipe_path(@recipe)
 	end
 
 	def update
@@ -30,7 +31,7 @@ class IngredientsController < ApplicationController
 	private
 
 		def ingredient_params
-			params.require(:ingredient).permit(:name, items_attributes: :amount, :measure)
+			params.require(:ingredient).permit(:name)
 		end
 
 		def get_ingredient

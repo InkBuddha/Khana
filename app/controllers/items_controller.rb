@@ -2,9 +2,6 @@ class ItemsController < ApplicationController
 	before_action :get_recipe
 
 	def index
-		@recipes = Recipe.all
-		@ingredients = Ingredient.all
-		@items = Item.all
 	end
 
 	def show
