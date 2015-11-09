@@ -1,18 +1,15 @@
 class RecipesController < ApplicationController
-	# before_action :find_recipe, only: [:show]
+	before_action :get_recipe, only: [:show, :destroy]
 
 	def index
-		@recipes = Recipe.all
+		@recipes = Recipe.paginate(page: params[:page])
 	end
 
 	def show
-		@recipe = Recipe.find(params[:id])
 	end
 
 	def new
 		@recipe = Recipe.new
-		# @recipe.ingredients.build
-		# @recipe.items.build
 	end
 
 	def create
@@ -26,28 +23,22 @@ class RecipesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@recipe.destroy
+
+		redirect_to root_path
+	end
+
 	private
 
 		def recipe_params
-			# Pas bon
-			params.require(:recipe).permit(:title, :description,
-										items_attributes: [:amount, :measure, {ingredients_attributes: :name }] )
+			params.require(:recipe).permit(
+										:title, :description,
+										items_attributes: [:id, :amount, :measure, :_destroy, 
+										{ingredients_attributes: :name }] )
 		end
 
-
-		# ============
-		# === HELP ===
-		# ============
-		#
-		# recipe: {
-		# 	title: "Fajitas",
-		# 	description: "Mexican sandwich",
-		# 	items_attributes: [{
-		# 		amout: 250,
-		# 		measure: "g"
-		# 		ingredients_attributes: [{
-		# 			name: "chicken"
-		# 		}]
-		# 	}]
-		# }
+		def get_recipe
+			@recipe = Recipe.find(params[:id])
+		end
 end

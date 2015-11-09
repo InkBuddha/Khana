@@ -4,10 +4,18 @@ html {height: 100%; margin: 0;}
 body {
 	margin: 0;
 	padding: 0;
-	background: url(salad.jpg) white no-repeat center center fixed;
-	@include bg_size_cover;
+	background: white;
 	height: 100%;
 }
+
+body.homepage {
+		margin: 0;
+		padding: 0;
+		background: url(salad.jpg) white no-repeat center center fixed;
+		@include bg_size_cover;
+		height: 100%;
+}
+
 
 .main_container {
 	min-height: 100%;

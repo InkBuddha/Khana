@@ -1,17 +1,30 @@
-<h1>New recipe</h1>
+<div class="row">
+	<div class="small-12 columns">
+		<h1>New recipe</h1>
 
-<%= form_for(@recipe) do |f| %>
-	<%= render 'shared/error_message' %>
+		<%= form_for(@recipe) do |f| %>
+			<fieldset id="recipe_meta">
+				<ul>
+					<li><%= f.text_field :title, placeholder: 'Title' %></li>
 
-	<%= f.text_field :title, placeholder: 'Title' %>
+					<li><%= f.text_area :description, placeholder: 'Description' %></li>
+				</ul>
+			</fieldset>
 
-	<%= f.text_field :description, placeholder: 'Description' %>
-
-		<!-- NESTED FORM -->
-		<%= f.field_for :items do |item| %>
-		<!-- recipe items ingredients association -->
+				<!-- NESTED FORM -->
+				<fieldset id="recipe-ingredients">
+					<ul>
+						<%= f.fields_for :items do |item| %>
+							<%= render 'item_fields', f: item %>
+						<% end %>	
+					</ul>
+						<%= link_to_add_association 'add ingredient', f, :items, 
+								'data-association-insertion-node' => "#recipe-ingredients ul", 
+								'data-association-insertion-method' => "append", 
+								:wrap_object => Proc.new {|item| item.build_ingredient; item } %>					
+				</fieldset>
+			
+			<%= f.submit 'Create Recipe' %>
 		<% end %>
-
-	
-	<%= f.submit 'Create' %>
-<% end %>
+	</div>
+</div>

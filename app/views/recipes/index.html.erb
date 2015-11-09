@@ -2,7 +2,10 @@
 	<div class="small-12 columns">		
 		<h1>My recipes</h1>
 
-			
+	<%= will_paginate @recipes, renderer: FoundationPagination::Rails %>
+	
+			<p><%= link_to 'Add a new recipe', new_recipe_path %></p>
+
 			<% @recipes.each do |recipe| %>
 				<ul class="small-block-grid-2 large-block-grid-3 recipe_index">
 					<li>
@@ -16,11 +19,20 @@
 							</div>						
 						</div>
 						<p class="origin">From: N/A</p>
-						<%= link_to "See recipe", recipe_path(recipe) %>
+						
+						<p><%= link_to "See recipe", recipe_path(recipe) %></p>
+						<% if logged_in? %>
+							<p><%= link_to 'Delete', recipe,
+															method: :delete,
+															class: 'button',
+															data: {confirm: 'Are you sure?'} %>
+							</p>
+						<% end %>
 					</li>
 				</ul>
 			<% end %>	
 			
+	<%= will_paginate @recipes, renderer: FoundationPagination::Rails %>		
 
 	</div>
 </div>
