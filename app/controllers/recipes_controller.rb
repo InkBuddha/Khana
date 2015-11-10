@@ -1,19 +1,11 @@
 class RecipesController < ApplicationController
-	before_action :get_recipe, only: [:show, :destroy]
+	before_action :get_recipe, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@recipes = Recipe.paginate(page: params[:page])
 	end
 
 	def show
-	end
-
-	def new_recipe_item
-		@recipe = Item.new
-	end
-
-	def new_recipe_ingredient
-		@recipe = Ingredient.new
 	end
 
 	def new
@@ -41,19 +33,14 @@ class RecipesController < ApplicationController
 		def recipe_params
 			params.require(:recipe).permit(
 						:title, :description,
-						items_attributes: [:id, :amount, :measure, :_destroy, ingredients_attributes: [:id, :_destroy, :name]] )
+						items_attributes: [:recipe_id, :ingredient_id, :id, :amount, :measure, :_destroy, 
+						ingredients_attributes: [:id, :_destroy, :name]
+						])
 		end
-
-		# def recipe_params
-		# 	params.require(:recipe).permit(
-		# 								:title, :description,
-		# 								items_attributes: [:id, :amount, :measure, :_destroy, 
-		# 								{ingredients_attributes: :name }] )
-		# end
 
 		#Before filters
 
 		def get_recipe
-			@recipe = Recipe.find(params[:id])
+			@recipe = Recipe.includes(:ingredients).find(params[:id])
 		end
 end

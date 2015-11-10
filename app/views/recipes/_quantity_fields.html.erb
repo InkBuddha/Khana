@@ -1,0 +1,7 @@
+	<div class="small-4 columns">
+		<%= f.input :amount %>
+	</div>
+
+	<div class="small-4 columns">
+		<%= f.input :measure, as: :select, collection: Item::VALID_MEASURES %>
+	</div>

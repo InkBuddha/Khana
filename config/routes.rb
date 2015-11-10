@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
 
-  resources :recipes do
-    resources :items do
-     resources :ingredients
-    end
-  end
+  resources :recipes 
+    # resources :items do
+    #  resources :ingredients
+    # end
+  
   
 end

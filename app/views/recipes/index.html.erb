@@ -20,11 +20,11 @@
 						</div>
 						<p class="origin">From: N/A</p>
 						
-						<p><%= link_to "See recipe", recipe_path(recipe) %></p>
+						<p><%= link_to "See recipe", recipe_path(recipe), class: 'button' %></p>
+
 						<% if logged_in? %>
 							<p><%= link_to 'Delete', recipe,
 															method: :delete,
-															class: 'button',
 															data: {confirm: 'Are you sure?'} %>
 							</p>
 						<% end %>
