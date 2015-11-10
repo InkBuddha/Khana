@@ -14,7 +14,7 @@
 				<!-- NESTED FORM -->
 				<fieldset id="recipe-ingredients">
 					<ul>
-						<%= f.fields_for :items do |item| %>
+						<%= f.simple_fields_for :items do |item| %>
 							<%= render 'item_fields', f: item %>
 						<% end %>	
 					</ul>

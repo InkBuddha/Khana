@@ -26,8 +26,7 @@
 					<% @recipe.items.each do |recipe_item| %>
 						<ul>
 							<li class='ingredient'>
-								<%= recipe_item.ingredient.name %>: <%= recipe_item.amount %> 
-								<%= recipe_item.measure %>
+									<%= recipe_item.ingredient.name %>: <%= recipe_item.amount %><%= recipe_item.measure %>
 							</li>
 						</ul>
 					<% end %>

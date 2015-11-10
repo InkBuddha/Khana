@@ -1,7 +1,7 @@
-<li class="row nested-fields">
+<li class="row nested-fields item-fields">
 	<div class="small-4 columns">
-		<%= f.fields_for :ingredients do |item_ingredient| %>
-			<%= item_ingredient.input :name %>
+		<%= f.simple_fields_for :ingredients do |ingredient| %>
+			<%= ingredient.input :name %>
 		<% end %>
 	</div>
 	<div class="small-4 columns">
