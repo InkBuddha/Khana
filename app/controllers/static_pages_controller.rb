@@ -1,7 +1,10 @@
 class StaticPagesController < ApplicationController
-  def home
+  
+  def index
   	if logged_in?
   		redirect_to current_user
+  	else
+  		@home_page = true
   	end
   end
 

@@ -1,14 +1,11 @@
 class RecipesController < ApplicationController
-	before_action :find_recipe, only: [:show]
+	before_action :get_recipe, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@recipes = Recipe.all
+		@recipes = Recipe.paginate(page: params[:page])
 	end
 
 	def show
-		@items = @recipe.items
-		@ingredient = @recipe.ingredients
-		# @item = Ingredient.find(params[:id])
 	end
 
 	def new
@@ -16,18 +13,34 @@ class RecipesController < ApplicationController
 	end
 
 	def create
-		@recipe = Recipe.new(recipe_params)
+		@recipe = Recipe.create(recipe_params)
+		if @recipe.save
+			flash[:success] = "Recipe successfully created"
+			redirect_to @recipe
+		else
+			flash[:error] = "Failed to create recipe"
+			render 'new'
+		end
+	end
+
+	def destroy
+		@recipe.destroy
+		redirect_to recipes_url
 	end
 
 	private
 
 		def recipe_params
-			params.require(:recipe).permit(:name, :category, :main_ingredient, 
-																		 :origin, :description, :prep_time, :cook_time,
-																		 items_attributes: [:amount, :measure])
+			params.require(:recipe).permit(
+						:title, :description,
+						items_attributes: [:recipe_id, :ingredient_id, :id, :amount, :measure, :_destroy, 
+						ingredient_attributes: [:id, :_destroy, :name]
+						])
 		end
 
-		def find_recipe
-			@recipe = Recipe.find(params[:id])
+		#Before filters
+
+		def get_recipe
+			@recipe = Recipe.includes(:ingredients).find(params[:id])
 		end
 end
