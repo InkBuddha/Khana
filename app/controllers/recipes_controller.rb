@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
 	def create
 		@recipe = Recipe.create(recipe_params)
 		if @recipe.save
-			flash[:success] = "Successfully created recipe"
+			flash[:success] = "Recipe successfully created"
 			redirect_to @recipe
 		else
 			flash[:error] = "Failed to create recipe"
@@ -34,7 +34,7 @@ class RecipesController < ApplicationController
 			params.require(:recipe).permit(
 						:title, :description,
 						items_attributes: [:recipe_id, :ingredient_id, :id, :amount, :measure, :_destroy, 
-						ingredients_attributes: [:id, :_destroy, :name]
+						ingredient_attributes: [:id, :_destroy, :name]
 						])
 		end
 

@@ -14,11 +14,12 @@
 				<!-- NESTED FORM -->
 				<fieldset id="recipe-ingredients">
 					<ul>
-						<%= f.simple_fields_for :ingredients do |ingredient| %>
-							<%= render 'ingredient_fields', f: ingredient %>
+						<%= f.simple_fields_for :items do |item| %>
+							<%= render 'item_fields', f: item %>
 						<% end %>	
 					</ul>
-						<%= link_to_add_association 'add ingredient', f, :ingredients %>					
+						<%= link_to_add_association 'add ingredient', f, :items,
+						:wrap_object => Proc.new {|item| item.build_ingredient; item } %>					
 				</fieldset>
 			
 			<%= f.button :submit %>
