@@ -26,7 +26,9 @@
 							<p><%= link_to 'Delete', recipe,
 															method: :delete,
 															data: {confirm: 'Are you sure?'} %>
+								 | <%= link_to 'Edit', edit_recipe_path(recipe) %>								 
 							</p>
+							<p></p>
 						<% end %>
 					</li>
 				</ul>

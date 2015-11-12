@@ -4,6 +4,7 @@
 			<!-- TITLE -->
 			<div class="large-5 columns recipes_items left">
 				<h1><%= @recipe.title %></h1>
+				<p><%= link_to 'Edit recipe', edit_recipe_path(@recipe) %></p>
 				<h4>From: N/A</h4>
 				<ul class="small-block-grid-2">
 					<li><p class="time">Prep: N/A</p></li>

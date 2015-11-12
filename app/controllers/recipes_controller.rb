@@ -12,6 +12,9 @@ class RecipesController < ApplicationController
 		@recipe = Recipe.new
 	end
 
+	def edit
+	end
+
 	def create
 		@recipe = Recipe.create(recipe_params)
 		if @recipe.save
@@ -20,6 +23,15 @@ class RecipesController < ApplicationController
 		else
 			flash[:error] = "Failed to create recipe"
 			render 'new'
+		end
+	end
+
+	def update
+		if @recipe.update_attributes(recipe_params)
+			flash[:success] = "Recipe updated"
+			redirect_to @recipe
+		else
+			render 'edit'
 		end
 	end
 
@@ -40,7 +52,11 @@ class RecipesController < ApplicationController
 
 		#Before filters
 
+		# def get_recipe
+		# 	@recipe = Recipe.includes(:ingredients).find(params[:id])
+		# end
+
 		def get_recipe
-			@recipe = Recipe.includes(:ingredients).find(params[:id])
+			@recipe = Recipe.find(params[:id])
 		end
 end

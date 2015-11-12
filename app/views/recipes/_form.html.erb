@@ -1,0 +1,21 @@
+<%= simple_form_for @recipe do |f| %>
+	<fieldset id="recipe_meta">
+		<ul>
+			<li><%= f.input :title %></li>
+			<li><%= f.input :description, as: :text, input_html: { :rows => 13 }  %></li>
+		</ul>
+	</fieldset>
+
+		<!-- NESTED FORM -->
+	<fieldset id="recipe_ingredients">
+		<ul>
+			<%= f.simple_fields_for :items do |item| %>
+				<%= render 'item_fields', f: item %>
+			<% end %>	
+		</ul>
+		<%= link_to_add_association 'add ingredient', f, :items,
+				:wrap_object => Proc.new {|item| item.build_ingredient; item } %>					
+	</fieldset>
+			
+		<%= f.button :submit %>
+<% end %>
