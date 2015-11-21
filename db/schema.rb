@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104144030) do
+ActiveRecord::Schema.define(version: 20151121161557) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20151104144030) do
 
   add_index "items", ["ingredient_id"], name: "index_items_on_ingredient_id"
   add_index "items", ["recipe_id"], name: "index_items_on_recipe_id"
+
+  create_table "meals", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "recipes", force: :cascade do |t|
     t.string   "title"
@@ -51,6 +58,7 @@ ActiveRecord::Schema.define(version: 20151104144030) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "time_zone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

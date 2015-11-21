@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="small-12 columns">
+		<%= month_calendar events: @meals do |date, meals|%>
+			<%= date %>
+
+			<% meals.each do |meal| %>
+				<div>
+					<%= meal.name %>
+				</div>
+			<% end %>
+		<% end %>
+
+	</div>
+</div>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
 
   resources :recipes 
+  resources :meals
     # resources :items do
     #  resources :ingredients
     # end
