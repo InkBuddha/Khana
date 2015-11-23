@@ -1,12 +1,14 @@
 // Base
 @import 'base/reset';
-// @import 'base/mixins';
-// @import 'base/colors';
-// @import 'base/typo';
+@import 'base/mixins';
+@import 'base/colors';
+@import 'base/typo';
 // @import 'base/forms';
-// @import 'base/globals';
+@import 'base/general';
 
 //styles
+@import "styles/navigation";
+@import "styles/footer";
 // @import "styles/account_activations";
 // @import "styles/password_resets";
 // @import "styles/recipes";

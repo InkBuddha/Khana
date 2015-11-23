@@ -1,49 +1,29 @@
 <% provide(:title, "Log in") %>
 
-<div id="login" class="row">
-	<div class="small-10 small-centered columns content">
-		<!-- <div class=""> -->
-			<h1>Log in</h1>
+<div id="login">
+	<h1>Log in</h1>
 
 <!-- FORM CONTAINER -->
-		<div class="row form_container">
+	<div class="form_container">
+		<!-- FORM FIELDS -->
+		<%= form_for(:session, url: login_path) do |f| %>	
 
-			<!-- FORM FIELDS -->
-			<%= form_for(:session, url: login_path) do |f| %>			
-			<div class="row">
-				<div class="small-6 columns form_field">
-						<%= f.email_field :email, placeholder: 'E-mail' %>
-				</div>
-				<div class="small-6 columns form_field">						
-						<%= f.password_field :password, placeholder: 'Password' %>
-						<span><%= link_to "(forgot password?)", new_password_reset_path %></span>
-				</div>
-			</div>
+			<%= f.email_field :email, placeholder: 'E-mail' %>
+								
+			<%= f.password_field :password, placeholder: 'Password' %>
+				<span><%= link_to "(forgot password?)", new_password_reset_path %></span>
 
 			<!-- CHECKBOX -->
-			<div id="checkbox" class="row">
-				<div class="small-8 small-centered columns">
-					<%= f.label :remember_me, class: 'checkbox' do %>
-						<%= f.check_box :remember_me %>
-						<span>Remember me on this computer</span>
-					<% end %>
-				</div>
-			</div>
-
+			<%= f.label :remember_me, class: 'checkbox' do %>
+				<%= f.check_box :remember_me %>
+					<span>Remember me on this computer</span>
+			<% end %>
 
 			<!-- BUTTON -->
-			<div id="submit_btn" class="row">
-				<div class="small-8 small-centered columns">
-						<div class="btn_holder"><%= f.submit "Log in", class: 'button round' %></div>
-						<p>New user? <%= link_to "Sign up now!", signup_path %></p>
-					
-				</div>
-			</div>
+			<%= f.submit "Log in" %>
+				<p>New user? <%= link_to "Sign up now!", signup_path %></p>
 
-			<% end %>
-		</div>
-		
-<!-- END FORM CONTAINER -->
+		<% end %>
 
 	</div>
 </div>

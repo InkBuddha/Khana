@@ -1,20 +1,4 @@
-/* Layout */
-html {height: 100%; margin: 0;}
 
-body {
-	margin: 0;
-	padding: 0;
-	background: white;
-	height: 100%;
-}
-
-body.homepage {
-		margin: 0;
-		padding: 0;
-		background: url(salad.jpg) white no-repeat center center fixed;
-		@include bg_size_cover;
-		height: 100%;
-}
 
 
 .main_container {
@@ -181,24 +165,7 @@ header {
 }
 
 /* footer */
-#footer, #push {
-	height: $footer-height;
-}
 
-#footer {	
-	background: $light_grass;
-	bottom: 0;
-	p {
-		padding-top: 1.5em;
-		// padding-bottom: 2em;
-		text-align: center;
-		color: white;
-	}
-	a {
-		color: $dark_brown;
-		font-weight: bold;
-	}
-}
 
 /* Miscellaneous */
 
@@ -214,10 +181,3 @@ header {
 // 	margin-top: 1em;
 // }
 
-.debug_dump {
-	clear:both;
-	text-align: center;
-	width: 100%;
-	@include box_sizing;
-	background: white;
-}

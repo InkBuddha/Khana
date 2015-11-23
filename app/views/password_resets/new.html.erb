@@ -1,19 +1,14 @@
 <% provide(:title, "Forgot password") %>
 
-<div class="row">
-	<div id="forgot_password" class="large-8 large-centered columns">
-		<div class="content">
-			<h1>Forgot Password</h1>
+<div id="forgot_password">
+	<div class="content">
+		<h1>Forgot Password</h1>
 
-			<div class="row">
-				<div class="large-6 large-centered columns">
-					<%= form_for(:password_reset, url: password_resets_path) do |f| %>
-						<%= f.email_field :email, placeholder: 'E-mail' %>
+			<%= form_for(:password_reset, url: password_resets_path) do |f| %>
+				<%= f.email_field :email, placeholder: 'E-mail' %>
 
-						<div class="btn_holder"><%= f.submit "Submit", class: 'button round' %></div>
-					<% end %>
-				</div>
-			</div>
-		</div>
+				<%= f.submit "Submit", class: 'button round' %>
+			<% end %>
 	</div>
 </div>
+

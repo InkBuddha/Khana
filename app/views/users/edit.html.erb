@@ -1,28 +1,22 @@
 <% provide(:title, 'Edit user') %>
 
-<div class="row">
-	<div id="signup" class="small-8 small-centered columns">
-		<div class="content">
-			<h1>Update your profile</h1>
+<div id="signup">
+	<div class="content">
+		<h1>Update your profile</h1>
 
-			<div class="row">
-				<div class="small-6 small-centered columns">
-					<%= form_for(@user) do |f| %>
-						<%= render 'shared/error_message' %>
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_message' %>
 
-						<%= f.text_field :name, placeholder: 'Name' %>
+			<%= f.text_field :name, placeholder: 'Name' %>
 
-						<%= f.email_field :email, placeholder: 'E-mail' %>
+			<%= f.email_field :email, placeholder: 'E-mail' %>
 
-						<%= f.password_field :password, placeholder: 'Password' %>
+			<%= f.password_field :password, placeholder: 'Password' %>
 
-						<%= f.password_field :password_confirmation, placeholder: 'Password confirmation' %>
+			<%= f.password_field :password_confirmation, placeholder: 'Password confirmation' %>
 
-						<div class="btn_holder"><%= f.submit "Save changes", class: 'button round' %></div>
-					<% end %>
+			<div class="btn_holder"><%= f.submit "Save changes", class: 'button round' %></div>
+		<% end %>
 
-				</div>
-			</div>
-		</div>
 	</div>
 </div>

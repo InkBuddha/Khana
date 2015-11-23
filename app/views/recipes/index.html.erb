@@ -1,40 +1,30 @@
-<div id="recipe_index" class="row">
-	<div class="small-12 columns">		
+<div id="recipe_index">		
 		<h1>My recipes</h1>
 
-	<%= will_paginate @recipes, renderer: FoundationPagination::Rails %>
+	<%= will_paginate @recipes %>
 	
-			<p><%= link_to 'Add a new recipe', new_recipe_path %></p>
+		<p><%= link_to 'Add a new recipe', new_recipe_path %></p>
 
-			<% @recipes.each do |recipe| %>
-				<ul class="small-block-grid-2 large-block-grid-3 recipe_index">
-					<li>
-						<h3><%= recipe.title %></h3>
-						<div class="row">
-							<div class="small-6 columns">
-								<p class="time left">Prep: N/A</p>
-							</div>
-							<div class="small-6 columns">
-								<p class="time right">Cook: N/A</p>
-							</div>						
-						</div>
-						<p class="origin">From: N/A</p>
-						
-						<p><%= link_to "See recipe", recipe_path(recipe), class: 'button' %></p>
+	<% @recipes.each do |recipe| %>
+		<ul class="recipe_index">
+			<li>
+				<h3><%= link_to "#{recipe.title}", recipe_path(recipe)  %></h3>
+					<p class="time left">Prep: N/A</p>							
+					<p class="time right">Cook: N/A</p>
+					<p class="origin">From: N/A</p>						
+				  <p><%= link_to "See recipe", recipe_path(recipe), class: 'button' %></p>
 
-						<% if logged_in? %>
-							<p><%= link_to 'Delete', recipe,
-															method: :delete,
-															data: {confirm: 'Are you sure?'} %>
+				<% if logged_in? %>
+					<p><%= link_to 'Delete', recipe,
+									method: :delete,
+									data: {confirm: 'Are you sure?'} %>
 								 | <%= link_to 'Edit', edit_recipe_path(recipe) %>								 
-							</p>
-							<p></p>
-						<% end %>
-					</li>
-				</ul>
-			<% end %>	
+					</p>
+				<% end %>
+			</li>
+		</ul>
+	<% end %>	
 			
-	<%= will_paginate @recipes, renderer: FoundationPagination::Rails %>		
+	<%= will_paginate @recipes %>		
 
-	</div>
 </div>

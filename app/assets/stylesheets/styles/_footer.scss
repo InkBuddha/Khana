@@ -1,0 +1,34 @@
+footer, #push {
+	height: $footer-height;
+}
+
+footer {
+	hr { 
+		width: 75%;
+		margin: auto;
+	}
+	p {
+		padding-top: 1.5em;
+		text-align: center;
+		color: white;
+	}
+	a{
+		font-weight: bold;		
+	}
+}
+
+footer.logged_in {	
+	background: $light_grass;
+	bottom: 0 fixed;
+	a {
+		color: $dark_brown;
+	}
+}
+
+.debug_dump {
+	clear:both;
+	text-align: center;
+	width: 100%;
+	@include box_sizing;
+	background: white;
+}
