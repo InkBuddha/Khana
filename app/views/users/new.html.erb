@@ -1,36 +1,24 @@
 <% provide(:title, 'Sign up') %>
 
-<div id="signup" class="row form_container">
-	<div class="small-12 columns content">
-		<h1>Sign Up</h1>
+<div id="signup" class="content form_container">
+		<h2>Sign Up</h2>
 
 <!-- FORM CONTAINER -->
 			
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_message' %>
-			<div class="row">
-				<div class="small-6 columns form_field">
 					<%= f.text_field :name, placeholder: 'User Name', class: 'form_field' %>
-				</div>
-				<div class="small-6 columns form_field">
+					<br>
 					<%= f.email_field :email, placeholder: 'E-mail', class: 'form_field' %>
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-6 columns form_field">
-					<%= f.password_field :password, placeholder: 'Password',class: 'form_field' %>
-				</div>
-				<div class="small-6 columns form_field">
-					<%= f.password_field :password_confirmation, placeholder: 'Password confirmation', 
-																											 class: 'form_field' %>
-				</div>
-			</div>
-
-			<div class="btn_holder"><%= f.submit "Create my account!", class: 'button round' %></div>
+					<br>
+					<%= f.password_field :password, placeholder: 'Password', class: 'form_field' %>
+					<br>
+					<%= f.password_field :password_confirmation, placeholder: 'Password confirmation', class: 'form_field' %>
+					<br>
+					<%= f.submit "Create my account!", class: 'form_field button' %>
 		<% end %>
 
 <!-- END FORM CONTAINER -->
 
-	</div>
 </div>
 

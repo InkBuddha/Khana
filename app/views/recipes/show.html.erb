@@ -1,7 +1,7 @@
 <div id="recipes">
 	<!-- TITLE -->
 	<aside class="recipes_items left">
-		<h1><%= @recipe.title %></h1>
+		<h2><%= @recipe.title %></h2>
 		<p><%= link_to 'Edit recipe', edit_recipe_path(@recipe) %></p>
 		<h4>From: N/A</h4>
 		<ul>
@@ -13,13 +13,13 @@
 
 			<!-- PREP DESCRIPTION -->
 	<section class="recipes_items right">
-		<h2>Preparation:</h2>
+		<h3>Preparation:</h3>
 		<p class="description"><%= @recipe.description %></p>
 	</section>
 
 		<!-- INGREDIENT LIST -->
 	<aside class="recipes_items">
-		<h2>Ingredients:</h2>
+		<h3>Ingredients:</h3>
 
 		<% @recipe.items.each do |item| %>
 			<ul>

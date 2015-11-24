@@ -15,17 +15,13 @@
 
   <body class="<%= 'homepage' if !logged_in? %>">
         
-    <div class="main_container">      
+    <div id="main_container">      
       <!-- TOP_NAV -->      
         <%= render 'layouts/top_nav' %>
-    
-        <div class="content">
-          <!-- CONTENT -->
           <%= render 'shared/flash' %>
 
             <%= yield %>
         
-        </div>
         <div id="push"></div>
 
     </div>

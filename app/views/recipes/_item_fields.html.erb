@@ -1,19 +1,13 @@
-<li class="row nested-fields ">
-		<div class="small-4 columns">
-			<%= f.simple_fields_for :ingredient do |quantity_ingredient| %>			
+<li class="nested-fields ">
+			<%= f.simple_fields_for :ingredient do |quantity_ingredient| %>		
 					<%= quantity_ingredient.input :name %>						
 			<% end %>
-		</div>
 
-		<div class="small-4 columns">
 			<%= f.input :amount %>
-		</div>
-		<div class="small-4 columns">
+
 			<%= f.input :measure, as: :select, collection: Item::VALID_MEASURES %>
 		</div>		
 
 		<p><%= link_to_remove_association "remove ingredient", f %></p>
-
-		</div>
 
 </li>

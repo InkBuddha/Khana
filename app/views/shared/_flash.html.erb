@@ -1,7 +1,5 @@
-<div class="row">
-	<div id="flash" class="large-8 large-centered columns">
+<div id="flash">
 		<% flash.each do |message_type, message| %>
 			<div class="alert-box <%= message_type %>"><%= message %></div>
 		<% end %>
-	</div>
 </div>
