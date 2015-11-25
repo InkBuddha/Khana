@@ -1,10 +1,12 @@
-<%= month_calendar events: @meals do |date, meals|%>
-	<%= date.day %>
+<div id="month-calendar">
+	<%= month_calendar events: @meals do |date, meals|%>
+		<%= date.day %>
 
-	<% meals.each do |meal| %>
-		<div>
-			<%= meal.name %>
-		</div>
+		<% meals.each do |meal| %>
+			<div>
+				<%= meal.name %>
+			</div>
+		<% end %>
+		
 	<% end %>
-	
-<% end %>
+</div>

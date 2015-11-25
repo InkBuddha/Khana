@@ -1,0 +1,51 @@
+/* GRID */
+#main_container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	@include outer-container;
+}
+
+#home {
+	@include span-columns(6);
+	@include shift(3);
+	text-align: center;
+}
+
+#show_user {
+	@include span-columns(6);
+	@include shift(3);
+}
+
+#recipe_index {
+	@include span-columns(6);
+	@include shift(3);
+}
+
+#month-calendar {
+	@include span-columns(6);
+	@include shift(3);
+}
+
+
+.form_container {
+	@include span-columns(6);
+	@include shift(3);
+	text-align: center;
+	.form_field {
+		width: 75%;
+	}
+}
+
+#flash {
+	@include span-columns(6);
+	@include shift(3);
+	padding-bottom: 2em;
+}
+
+#error_explanation {
+	@include span-columns(6);
+	@include shift(3);
+	padding-top: 2em;
+	padding-bottom: 2em;	
+}
