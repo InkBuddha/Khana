@@ -1,10 +1,9 @@
 <% provide(:title, 'Sign up') %>
 
-<div id="signup" class="content form_container">
+<div id="signup" class="content form_container_a">
 		<h2>Sign Up</h2>
 
-<!-- FORM CONTAINER -->
-			
+<!-- FORM CONTAINER -->	
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_message' %>
 					<%= f.text_field :name, placeholder: 'User Name', class: 'form_field' %>

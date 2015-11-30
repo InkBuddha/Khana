@@ -1,28 +1,45 @@
 /* forms */
 label {display: block;}
 
-input {
+.form_container_a {
+
+	h2 {font-size: 2em;	}
+
+	a {font-weight: bold;}
+
+	input {
+		margin-top: 2em;
     background: transparent;
     border: none;
     border-bottom: 1px solid white;
     color: white;
+	}
+
+	input[type='submit'] {
+		border: 1px solid white;
+	}
+
+	.button {
+		border: 1px solid white;
+		border-radius: 5px;
+		cursor: pointer;
+		padding: 1em;
+	}
+	
+	// Change placeholder color for =/= browser
+	::-webkit-input-placeholder { color: white !important; }
+	:-moz-placeholder { color: white !important; } /* Firefox 18- */
+	::-moz-placeholder { color: white !important; } /* Firefox 19+ */
+	:-ms-input-placeholder { color: white !important; }
+	
 }
 
-input[type='submit'] {
-	border: 1px solid white;
-}
+	#recipe_description {
+		height: 300px;
+		width: 500px;
+	}
 
-.form_container {
-	h2 {font-size: 2em;}
-	input {margin-top: 2em;}
-}
-
-// Change placeholder color for =/= browser
-::-webkit-input-placeholder { color: white !important; }
-:-moz-placeholder { color: white !important; } /* Firefox 18- */
-::-moz-placeholder { color: white !important; } /* Firefox 19+ */
-:-ms-input-placeholder { color: white !important; }
-
+	
 
 // 
 // === OLD ===

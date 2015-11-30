@@ -22,13 +22,31 @@
 	@include shift(3);
 }
 
+#recipes_show {
+	.recipe-title {
+		@include span-columns(4);
+	}
+	.recipe-prep {
+		@include span-columns(8);
+		@include omega();
+	}
+}
+
+#recipe_new {
+	@include span-columns(6);
+		@include shift(3);
+	fieldset {
+		
+	}
+}
+
 #month-calendar {
 	@include span-columns(6);
 	@include shift(3);
 }
 
 
-.form_container {
+.form_container_a {
 	@include span-columns(6);
 	@include shift(3);
 	text-align: center;

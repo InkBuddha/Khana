@@ -5,7 +5,10 @@
 // Global
 h1, h2, h3, h4, h5, h6 {line-height: 1;}
 
-// a {color: white;}
+a {color: $lime_green;}
+h3 {
+	a {color: $dark_brown;	}
+}
 
 .left {float: left;}
 .right {float: right;}
@@ -21,7 +24,7 @@ body, .button {font-family: 'Droid Serif', serif;}
 	h3 {font-family: 'Raleway';}
 }
 
-#recipes {
+#recipes_show {
 	h1 {font-family: 'Raleway';}
 	h4 {font-family: 'Droid Serif', serif;}
 }

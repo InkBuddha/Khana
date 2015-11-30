@@ -1,15 +1,21 @@
-<%= simple_form_for @recipe do |f| %>
+<%= form_for @recipe do |f| %>
 	<fieldset id="recipe_meta">
 		<ul>
-			<li><%= f.input :title %></li>
-			<li><%= f.input :description, as: :text, input_html: { :rows => 13 }  %></li>
+			<li>
+				<%= f.label :title  %> <br>
+				<%= f.text_field :title %>
+			</li>
+			<li>
+				<%= f.label :description  %> <br>
+				<%= f.text_area :description, as: :text, id: 'recipe_description'  %>
+			</li>
 		</ul>
 	</fieldset>
 
 		<!-- NESTED FORM -->
 	<fieldset id="recipe_ingredients">
 		<ul>
-			<%= f.simple_fields_for :items do |item| %>
+			<%= f.fields_for :items do |item| %>
 				<%= render 'item_fields', f: item %>
 			<% end %>	
 		</ul>
@@ -17,5 +23,5 @@
 				:wrap_object => Proc.new {|item| item.build_ingredient; item } %>					
 	</fieldset>
 			
-		<%= f.button :submit %>
+		<%= f.submit 'Create recipe', class: 'button' %>
 <% end %>
