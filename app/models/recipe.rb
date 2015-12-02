@@ -1,5 +1,6 @@
 class Recipe < ActiveRecord::Base
 	belongs_to :user
+	default_scope -> { order(created_at: :desc) }
 	has_many :items, dependent: :destroy
 	has_many :ingredients, through: :items
 
@@ -10,6 +11,7 @@ class Recipe < ActiveRecord::Base
 																reject_if: :all_blank,
 																allow_destroy: true
 
+	# validates :user_id, presence: true
 	validates :title, presence: true
 	validates :description, presence: true
 

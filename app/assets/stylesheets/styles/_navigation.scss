@@ -9,18 +9,19 @@ header.not_logged_in {
 }
 
 header.logged_in {
-	height: 5em;
-	background: url(BG_header.jpg);
+	height: 7em;
+	background: url(BG_header.jpg) $lime_green;
 	@include bg_size_cover;
 
 	ul {	
-		padding-top: 2em;
+		padding-top: 3em;
 		li {
 			display: inline;
 			padding-left: 1.5em;
 			a {
 				color: white;
 				text-decoration: none;
+				text-transform: uppercase;
 			}
 		}
 	}
@@ -30,5 +31,13 @@ header.logged_in {
 	}
 }
 
-// .left { float: left;}
-// .right { float: right;}
+.header {
+	h1 {
+		background-color: $lime_green;
+		font-size: 2.5em;
+		padding-top: 0.3em;
+		padding-bottom: 0.3em;
+		text-align: center;
+	}
+	a {color: white;}
+}

@@ -3,6 +3,11 @@ class RecipesController < ApplicationController
 
 	def index
 		@recipes = Recipe.paginate(page: params[:page])
+
+		respond_to do |format|
+			format.html
+			format.js {render @recipes}
+		end
 	end
 
 	def show
@@ -17,27 +22,36 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = Recipe.create(recipe_params)
-		if @recipe.save
-			flash[:success] = "Recipe successfully created"
-			redirect_to @recipe
-		else
-			flash[:error] = "Failed to create recipe"
-			render 'new'
+
+		respond_to do |format|
+			if @recipe.save
+				format.html { redirect_to @recipe, notice: "#{@recipe.title} successfully created" }
+				format.js {render @recipe}
+			else
+				format.html { render :new, notice: "Failed to create recipe" }
+				format.js { render @event_errors, status: :unprocessable_entity }
+			end
 		end
 	end
 
 	def update
-		if @recipe.update_attributes(recipe_params)
-			flash[:success] = "Recipe updated"
-			redirect_to @recipe
-		else
-			render 'edit'
+		respond_to do |format|
+			if @recipe.update_attributes(recipe_params)
+				format.html { redirect_to @recipe, notice: "Recipe successfully updated" }
+				format.js {render @recipe}
+			else
+				format.html {render :edit, notice: "Oops, something went wrong"}
+				format.js {render @event_errors, status: :unprecessable_entity }
+			end
 		end
 	end
 
 	def destroy
 		@recipe.destroy
-		redirect_to recipes_url
+		respond_to do |format|
+			format.html { redirect_to recipes_url, notice: "#{@recipe.title} recipe sucessfully deleted"}
+			format.js
+		end
 	end
 
 	private
@@ -51,10 +65,6 @@ class RecipesController < ApplicationController
 		end
 
 		#Before filters
-
-		# def get_recipe
-		# 	@recipe = Recipe.includes(:ingredients).find(params[:id])
-		# end
 
 		def get_recipe
 			@recipe = Recipe.find(params[:id])
