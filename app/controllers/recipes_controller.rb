@@ -21,7 +21,8 @@ class RecipesController < ApplicationController
 	end
 
 	def create
-		@recipe = Recipe.create(recipe_params)
+		# @recipe = Recipe.create(recipe_params)
+		@recipe = current_user.recipes.build(recipe_params)
 
 		respond_to do |format|
 			if @recipe.save
