@@ -17,15 +17,6 @@
 	@include shift(3);
 }
 
-#user_edit {
-	@include span-columns(6);
-	@include shift(3);
-	.content {
-		text-align: center;
-	}
-	label {text-align: left;}
-}
-
 #recipe_index {
 	@include span-columns(6);
 	@include shift(3);
@@ -51,6 +42,14 @@
 	}
 }
 
+#recipe_edit {
+	@include span-columns(6);
+	@include shift(3);
+	fieldset {
+		
+	}
+}
+
 #month-calendar {
 	@include span-columns(6);
 	@include shift(3);
@@ -65,6 +64,19 @@
 	// text-align: center;
 	padding-left: 5%;
 	padding-right: 5%;
+	.form_field {
+		width: 100%;
+	}
+	h2 {
+		text-align: center;
+	}
+}
+
+.form_container_b {
+	@include span-columns(6);
+	@include shift(3);
+	padding-left: 10%;
+	padding-right: 10%;
 	.form_field {
 		width: 100%;
 	}

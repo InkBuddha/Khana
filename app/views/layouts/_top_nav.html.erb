@@ -24,8 +24,9 @@
           <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
           <li class="last"><%= link_to 'Log Out', logout_path, method: 'delete' %></li>
         </ul>        
-  		</nav>		
+  		</nav>	      
   </header>
+  <%= yield(:submenu)  %>
 <% else %>
   <header class="not_logged_in">
     <h1><%= link_to 'Khana', root_path  %></h1>

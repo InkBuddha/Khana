@@ -33,7 +33,32 @@ label {display: block;}
 	}
 
 .form_container_b {
-	
+	h2 { 
+		font-size: 2em;
+		margin-bottom: 2em;
+	}
+	input {
+		margin-bottom: 1em;
+	}
+
+	.btn_holder {text-align: center;}
+
+	.btn {
+	  -webkit-border-radius: 28;
+	  -moz-border-radius: 28;
+	  border-radius: 28px;
+	  font-family: Arial;
+	  color: #ffffff;
+	  font-size: 20px;
+	  background: $lime_green;
+	  padding: 10px 20px 10px 20px;
+	  text-decoration: none;
+	}
+
+	.btn:hover {
+	  background: $lime_green_darker;
+	  text-decoration: none;
+	}
 }
 
 	

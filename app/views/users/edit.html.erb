@@ -1,26 +1,24 @@
 <% provide(:title, 'Edit user') %>
 
 <div id="user_edit" class="form_container_b">
-	<div class="content">
 		<h2>Update your profile</h2>
 
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_message' %>
 			
 			<%= f.label :name  %>
-			<%= f.text_field :name %> <br>
+			<%= f.text_field :name, class: 'form_field' %> <br>
 
 			<%= f.label :email  %>
-			<%= f.email_field :email %> <br>
+			<%= f.email_field :email, class: 'form_field' %> <br>
 
 			<%= f.label :password  %>
-			<%= f.password_field :password %> <br>
+			<%= f.password_field :password, class: 'form_field' %> <br>
 
 			<%= f.label :password_confirmation %>
-			<%= f.password_field :password_confirmation %> <br>
+			<%= f.password_field :password_confirmation, class: 'form_field' %> <br>
 
-			<div class="btn_holder"><%= f.submit "Save changes", class: 'button round' %></div>
+			<div class="btn_holder"><%= f.submit "Save changes", class: 'btn' %></div>
 		<% end %>
 
-	</div>
 </div>

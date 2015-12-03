@@ -1,12 +1,8 @@
-<div id="month-calendar" class="content">
-	<%= month_calendar events: @meals do |date, meals|%>
-		<%= date.day %>
+<% content_for(:submenu) do %>
+	<%= render 'subnav'  %>
+<% end %>
 
-		<% meals.each do |meal| %>
-			<div>
-				<%= meal.name %>
-			</div>
-		<% end %>
-		
-	<% end %>
+<div id="month-calendar" class="content">
+	<%= render 'week_calendar'  %>
+	<%= render 'month_calendar' %>
 </div>

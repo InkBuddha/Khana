@@ -7,7 +7,9 @@
 			<aside>
 				<% if @user.recipes.any? %>
 					<h4>Last recipes</h4>
-					<%= render @recipes  %>
+					<ul>
+						<%= render @recipes  %>
+					</ul>					
 				<% end %>
 			</aside>
 
