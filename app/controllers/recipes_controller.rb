@@ -3,11 +3,6 @@ class RecipesController < ApplicationController
 
 	def index
 		@recipes = Recipe.paginate(page: params[:page])
-
-		respond_to do |format|
-			format.html
-			format.js {render @recipes}
-		end
 	end
 
 	def show
@@ -21,38 +16,37 @@ class RecipesController < ApplicationController
 	end
 
 	def create
-		# @recipe = Recipe.create(recipe_params)
 		@recipe = current_user.recipes.build(recipe_params)
 
-		respond_to do |format|
 			if @recipe.save
-				format.html { redirect_to @recipe, notice: "#{@recipe.title} successfully created" }
-				format.js {render @recipe}
+				flash[:notice] = "#{@recipe.title} successfully created"
+				redirect_to @recipe
 			else
-				format.html { render :new, notice: "Failed to create recipe" }
-				format.js { render @event_errors, status: :unprocessable_entity }
+				flash[:alert] = "Failed to create recipe"
+				render :new
 			end
-		end
 	end
 
 	def update
-		respond_to do |format|
+		@recipe.update_attributes(recipe_params)
+
 			if @recipe.update_attributes(recipe_params)
-				format.html { redirect_to @recipe, notice: "Recipe successfully updated" }
-				format.js {render @recipe}
+				flash[:notice] = "Recipe successfully updated"
+				redirect_to @recipe
 			else
-				format.html {render :edit, notice: "Oops, something went wrong"}
-				format.js {render @event_errors, status: :unprecessable_entity }
+				flash[:alert] = "Oops, something went wrong"
+				render :edit
 			end
-		end
+	end
+
+	def delete
+		@recipe = Recipe.find(params[:product_id])
 	end
 
 	def destroy
 		@recipe.destroy
-		respond_to do |format|
-			format.html { redirect_to recipes_url, notice: "#{@recipe.title} recipe sucessfully deleted"}
-			format.js
-		end
+		flash[:notice] = "#{@recipe.title} recipe sucessfully deleted"
+		redirect_to recipes_url
 	end
 
 	private

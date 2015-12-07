@@ -1,3 +1,4 @@
+<% provide(:title, 'My Recipes') %>
 <% content_for(:submenu) do %>
 	<%= render 'subnav'  %>
 <% end %>
@@ -7,30 +8,10 @@
 
 	<%= will_paginate @recipes %>
 	
-		<p><%= link_to ('<i class="fa fa-plus fa-2x"></i> New Recipe').html_safe, new_recipe_path %></p>
+		<p><%= link_to ('<i class="fa fa-plus fa-2x"></i> New Recipe').html_safe, new_recipe_path, remote: true %></p>
 
-	<% @recipes.each do |recipe| %>
-		<ul>
-			<li class="<%= cycle('even', 'odd') %> item">
-				<h3><%= link_to "#{recipe.title}", recipe_path(recipe)  %></h3>
-					<br>
-					<p class="time left">Prep: N/A</p>						
-					<p class="time right">Cook: N/A</p>
-					<br>
-					<p class="origin">From: N/A</p>
-					<br>
-
-				<% if logged_in? %>
-					<p><%= link_to ('<i class="fa fa-trash-o"></i> Delete').html_safe, recipe,
-									method: :delete,
-									data: {confirm: 'Are you sure?'} %>
-								 | <%= link_to ('<i class="fa fa-pencil"></i> Edit').html_safe, edit_recipe_path(recipe) %>								 
-					</p>
-				<% end %>
-			</li>
-		</ul>
-	<% end %>	
-			
+			<%= render 'recipes' %>
+				
 	<%= will_paginate @recipes %>		
 
 </div>

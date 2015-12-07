@@ -129,8 +129,8 @@ body.homepage {
 		padding: 1em;
 	}
 }
-// RECIPES > SHOW
 
+// RECIPES > SHOW
 #recipes_show {
 	margin-top: 1.5em;
 	
@@ -140,11 +140,18 @@ body.homepage {
 	}
 
 	aside {
-		h2, h3 {margin-bottom: 0.5em;}
-		h2 {font-size: 1.2em;}
 		h3 {
+			font-size: 1.2em;
+			margin-bottom: 0.5em;
 			margin-top: 0.5em;
 		}
+		h4 {
+			margin-bottom: 1em;
+			margin-top: 1em;
+		}
+	}
+	section {
+		h4 {margin-bottom: 1em;}
 	}
 }
 // RECIPES > EDIT

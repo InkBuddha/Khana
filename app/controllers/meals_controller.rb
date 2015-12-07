@@ -1,10 +1,19 @@
 class MealsController < ApplicationController
 	before_action :set_time_zone, if: :logged_in?
-	# before_action :init_nav
+	before_action :get_meal, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@meals = Meal.all
+		@recipes = Recipe.all
+
+		def month_calendar
+			respond_to do |format|
+				format.js
+			end
+		end
 	end
+
+	
 
 	private
 
@@ -12,9 +21,9 @@ class MealsController < ApplicationController
 			Time.zone = current_user.time_zone
 		end
 
-		  private 
+		  private
 
-  	 # def init_nav
-  	 # 	@subnav  = ['This Month', 'This week']
-  	 # end
+		  def get_meal
+		  	@meal = Meal.find(params[:id])
+		  end
 end

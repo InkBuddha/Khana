@@ -1,16 +1,17 @@
+<% provide(:title, "#{@recipe.title} Recipe") %>
 <div id="recipes_show" class='content'>
 	<!-- TITLE -->
 	<aside class="recipe-title">
 		<h3><%= @recipe.title %></h3>
-		<p><%= link_to ('<i class="fa fa-pencil"></i>Edit recipe').html_safe, edit_recipe_path(@recipe) %></p>
-		<h4>From: N/A</h4>
+		<p><%= link_to ('<i class="fa fa-pencil"></i>Edit recipe').html_safe, edit_recipe_path(@recipe) %></p>		
 		<ul>
+			<li><p>From: N/A</p></li>
 			<li><p class="time">Prep: N/A</p></li>
 			<li><p class="time"> Cuisson: N/A</p></li>
-		</ul>
-			<p class="main_ingr">Main ingredient: N/A</p>
+			<li><p class="main_ingr">Main ingredient: N/A</p></li>
+		</ul>			
 
-			<h4>Ingredients:</h4>
+		<h4>Ingredients:</h4>
 
 		<% @recipe.items.each do |item| %>
 			<ul>

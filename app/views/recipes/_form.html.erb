@@ -1,4 +1,5 @@
 <%= form_for @recipe do |f| %>
+<section>
 	<fieldset id="recipe_meta">
 		<ul>
 			<li>
@@ -11,17 +12,20 @@
 			</li>
 		</ul>
 	</fieldset>
+</section>
 
 		<!-- NESTED FORM -->
-	<fieldset id="recipe_ingredients">
-		<ul>
-			<%= f.fields_for :items do |item| %>
-				<%= render 'item_fields', f: item %>
-			<% end %>	
-		</ul>
-		<%= link_to_add_association 'add ingredient', f, :items,
-				:wrap_object => Proc.new {|item| item.build_ingredient; item } %>					
-	</fieldset>
+	<aside>
+		<fieldset id="recipe_ingredients">
+			<ul>
+				<%= f.fields_for :items do |item| %>
+					<%= render 'item_fields', f: item %>
+				<% end %>	
+			</ul>
+			<%= link_to_add_association 'add ingredient', f, :items,
+					:wrap_object => Proc.new {|item| item.build_ingredient; item } %>	
+		</fieldset>
+	</aside>
 			
-		<%= f.submit 'Create recipe', class: 'button' %>
+		<%= f.submit yield(:button_text), class: 'button' %>
 <% end %>
