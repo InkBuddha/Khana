@@ -1,0 +1,9 @@
+<%= week_calendar number_of_weeks: 1, events: @meals do |date, meals| %>
+  <%= date.day %>
+
+  <% meals.each do |meal| %>
+			<div>
+				<%= meal.name %>
+			</div>
+		<% end %>
+<% end %>
