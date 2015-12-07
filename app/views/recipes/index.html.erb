@@ -1,40 +1,17 @@
-<div id="recipe_index" class="row">
-	<div class="small-12 columns">		
-		<h1>My recipes</h1>
+<% provide(:title, 'My Recipes') %>
+<% content_for(:submenu) do %>
+	<%= render 'subnav'  %>
+<% end %>
 
-	<%= will_paginate @recipes, renderer: FoundationPagination::Rails %>
+<div id="recipe_index" class='content'>		
+		<h2>My recipes</h2>
+
+	<%= will_paginate @recipes %>
 	
-			<p><%= link_to 'Add a new recipe', new_recipe_path %></p>
+		<p><%= link_to ('<i class="fa fa-plus fa-2x"></i> New Recipe').html_safe, new_recipe_path, remote: true %></p>
 
-			<% @recipes.each do |recipe| %>
-				<ul class="small-block-grid-2 large-block-grid-3 recipe_index">
-					<li>
-						<h3><%= recipe.title %></h3>
-						<div class="row">
-							<div class="small-6 columns">
-								<p class="time left">Prep: N/A</p>
-							</div>
-							<div class="small-6 columns">
-								<p class="time right">Cook: N/A</p>
-							</div>						
-						</div>
-						<p class="origin">From: N/A</p>
-						
-						<p><%= link_to "See recipe", recipe_path(recipe), class: 'button' %></p>
+			<%= render 'recipes' %>
+				
+	<%= will_paginate @recipes %>		
 
-						<% if logged_in? %>
-							<p><%= link_to 'Delete', recipe,
-															method: :delete,
-															data: {confirm: 'Are you sure?'} %>
-								 | <%= link_to 'Edit', edit_recipe_path(recipe) %>								 
-							</p>
-							<p></p>
-						<% end %>
-					</li>
-				</ul>
-			<% end %>	
-			
-	<%= will_paginate @recipes, renderer: FoundationPagination::Rails %>		
-
-	</div>
 </div>

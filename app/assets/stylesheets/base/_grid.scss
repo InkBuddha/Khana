@@ -1,0 +1,99 @@
+/* GRID */
+#main_container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	@include outer-container;
+}
+
+#home {
+	@include span-columns(6);
+	@include shift(3);
+	text-align: center;
+}
+
+#show_user {
+	@include span-columns(6);
+	@include shift(3);
+}
+
+#recipe_index {
+	@include span-columns(6);
+	@include shift(3);
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#recipes_show {
+	.recipe-title {
+		@include span-columns(4);
+	}
+	.recipe-prep {
+		@include span-columns(8);
+		@include omega();
+	}
+}
+
+#recipe_new {
+	@include span-columns(6);
+	@include shift(3);
+	fieldset {
+		
+	}
+}
+
+#recipe_edit {
+	@include span-columns(6);
+	@include shift(3);
+	fieldset {
+		
+	}
+}
+
+#month-calendar {
+	@include span-columns(6);
+	@include shift(3);
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+.form_container_a {
+	@include span-columns(6);
+	@include shift(3);
+	// text-align: center;
+	padding-left: 5%;
+	padding-right: 5%;
+	.form_field {
+		width: 100%;
+	}
+	h2 {
+		text-align: center;
+	}
+}
+
+.form_container_b {
+	@include span-columns(6);
+	@include shift(3);
+	padding-left: 10%;
+	padding-right: 10%;
+	.form_field {
+		width: 100%;
+	}
+	h2 {
+		text-align: center;
+	}
+}
+
+#flash {
+	@include span-columns(6);
+	@include shift(3);
+	padding-bottom: 2em;
+}
+
+#error_explanation {
+	@include span-columns(6);
+	@include shift(3);
+	padding-top: 2em;
+	padding-bottom: 2em;	
+}

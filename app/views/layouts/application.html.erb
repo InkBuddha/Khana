@@ -7,29 +7,30 @@
     <title><%= full_title(yield(:title)) %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag :modernizr %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
 
-  <body class="<%= @home_page ? 'homepage' : '' %>">
+  <body class="<%= 'homepage' if !logged_in? %>">
         
-    <div class="main_container">      
+    <div id="main_container">      
       <!-- TOP_NAV -->      
         <%= render 'layouts/top_nav' %>
-    
-        <div class="content">
-          <!-- CONTENT -->
           <%= render 'shared/flash' %>
 
+	<div id="main">
             <%= yield %>
+	</div>
         
-        </div>
-        <div id="push"></div>    
-        <!-- <%= debug(params) if Rails.env.development? %>-->            
+        <div id="push"></div>
+
     </div>
   <%= render 'layouts/footer' %>
+
+<!-- DEBUG DUMP -->
+<%= debug(params) if Rails.env.development? %>
 
   </body>
 </html>

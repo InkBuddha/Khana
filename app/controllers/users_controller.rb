@@ -3,8 +3,10 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
+
 	def show
 		@user = User.find(params[:id])
+    @recipes = @user.recipes.order('created_at').limit(3)
 	end
 
   def new
@@ -30,7 +32,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to edit_user_url
+      redirect_to @user
     else
       render 'edit'
     end
@@ -77,4 +79,6 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
+
+    
 end

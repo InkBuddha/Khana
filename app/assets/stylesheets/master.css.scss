@@ -1,14 +1,20 @@
 // Base
-@import 'base/mixins';
-@import 'base/colors';
+@import 'base/reset';
+@import 'bourbon';
+@import 'base/grid_settings';
+@import 'neat';
+@import 'base/grid';
+@import 'base/vars_and_mixins';
 @import 'base/typo';
 @import 'base/forms';
-@import 'base/globals';
+@import 'base/general';
 
 //styles
-@import "styles/account_activations";
-@import "styles/password_resets";
-@import "styles/recipes";
-@import "styles/sessions";
-@import "styles/static_pages";
-@import "styles/users";
+@import "styles/navigation";
+@import "styles/footer";
+// @import "styles/account_activations";
+// @import "styles/password_resets";
+// @import "styles/recipes";
+// @import "styles/sessions";
+// @import "styles/static_pages";
+// @import "styles/users";

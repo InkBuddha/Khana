@@ -1,55 +1,117 @@
 /* forms */
+label {display: block;}
 
-input, textarea, select, .uneditable-input {
-	margin-bottom:15px;
-	@include box_sizing;
-	color: white;
-	height: auto !important;
-	background-color: rgba(0, 0, 0, 0.5) !important;
-	font-weight: 400;
-	border: 3px solid white !important;
-	border-radius: 5px !important;
-	&:focus {color: white;}
+.form_container_a {
+
+	h2 {font-size: 2em;	}
+
+	a {font-weight: bold;}
+
+	input {
+		margin-top: 2em;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+	}
+
+	input[type='submit'] {
+		border: 1px solid white;
+	}
+	
+	// Change placeholder color for =/= browser
+	::-webkit-input-placeholder { color: white !important; }
+	:-moz-placeholder { color: white !important; } /* Firefox 18- */
+	::-moz-placeholder { color: white !important; } /* Firefox 19+ */
+	:-ms-input-placeholder { color: white !important; }
+	
 }
 
-.form_field {
-	padding-left: 1.5em;
-	padding-right: 1.5em;
-}
+	#recipe_description {
+		height: 300px;
+		width: 500px;
+	}
 
-fieldset {
-	ul {list-style: none;}
-}
+.form_container_b {
+	h2 { 
+		font-size: 2em;
+		margin-bottom: 2em;
+	}
+	input {
+		margin-bottom: 1em;
+	}
 
-.form_container { padding-left: 1.5em; padding-right: 1.5em;}
+	.btn_holder {text-align: center;}
 
-// Change placeholder color for =/= browser
-::-webkit-input-placeholder { color: white !important; }
-:-moz-placeholder { color: white !important; } /* Firefox 18- */
-::-moz-placeholder { color: white !important; } /* Firefox 19+ */
-:-ms-input-placeholder { color: white !important; }
+	.btn {
+	  -webkit-border-radius: 28;
+	  -moz-border-radius: 28;
+	  border-radius: 28px;
+	  font-family: Arial;
+	  color: #ffffff;
+	  font-size: 20px;
+	  background: $lime_green;
+	  padding: 10px 20px 10px 20px;
+	  text-decoration: none;
+	}
 
-#login {
-	input {margin-bottom: 0;}
-	span a {
-		padding-top: 0;
-		font-size: 12px;
+	.btn:hover {
+	  background: $lime_green_darker;
+	  text-decoration: none;
 	}
 }
 
-// Centre le boutons sous le formulaire
-.btn_holder { text-align: center;}
+	
 
-#error_explanation {
-	color: $complementary_color-r;
-	ul {		
-		color: white;
-		margin: 0 0 30px 0;
-		li {margin-left: 1em;	}
-	}
-}
+// 
+// === OLD ===
+//
+// input, textarea, select, .uneditable-input {
+// 	margin-bottom:15px;
+// 	@include box_sizing;
+// 	color: white;
+// 	height: auto !important;
+// 	background-color: rgba(0, 0, 0, 0.5) !important;
+// 	font-weight: 400;
+// 	border: 3px solid white !important;
+// 	border-radius: 5px !important;
+// 	&:focus {color: white;}
+// }
 
-.checkbox span{
-	margin-left: 10px;
-	color: white;
-}
+// .form_field {
+// 	padding-left: 1.5em;
+// 	padding-right: 1.5em;
+// }
+
+// fieldset {
+// 	ul {list-style: none;}
+// }
+
+// .form_container { padding-left: 1.5em; padding-right: 1.5em;}
+
+
+
+// #login {
+// 	input {margin-bottom: 0;}
+// 	span a {
+// 		padding-top: 0;
+// 		font-size: 12px;
+// 	}
+// }
+
+// // Centre le boutons sous le formulaire
+// .btn_holder { text-align: center;}
+
+// #error_explanation {
+// 	color: $complementary_color-r;
+// 	ul {		
+// 		color: white;
+// 		margin: 0 0 30px 0;
+// 		li {margin-left: 1em;	}
+// 	}
+// }
+
+// .checkbox span{
+// 	margin-left: 10px;
+// 	color: white;
+// }

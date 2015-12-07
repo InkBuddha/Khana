@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
-ruby '2.1.7'
+# ruby '2.1.7'
 
 gem 'rails', 				'4.2.4'
 gem 'sass-rails', 	'~> 5.0'
-gem 'foundation-rails'
 gem 'font-awesome-rails'
 gem 'simple_calendar', '~> 2.0'
-gem 'simple_form'
-gem 'will_paginate-foundation'
+gem 'will_paginate'
+gem 'modernizr-rails'
+gem 'neat'
 gem 'cocoon'
 gem 'uglifier', 		'>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -32,6 +32,8 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
 end
 
 group :test do

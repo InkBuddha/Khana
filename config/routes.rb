@@ -12,10 +12,12 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
 
-  resources :recipes 
-    # resources :items do
-    #  resources :ingredients
-    # end
-  
+  resources :recipes do
+    get 'delete'
+  end
+
+  resources :meals do
+    get '/month_calendar' => 'meals#month_calendar', as: 'month_calendar'
+  end
   
 end

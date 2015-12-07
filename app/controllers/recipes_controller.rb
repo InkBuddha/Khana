@@ -16,27 +16,36 @@ class RecipesController < ApplicationController
 	end
 
 	def create
-		@recipe = Recipe.create(recipe_params)
-		if @recipe.save
-			flash[:success] = "Recipe successfully created"
-			redirect_to @recipe
-		else
-			flash[:error] = "Failed to create recipe"
-			render 'new'
-		end
+		@recipe = current_user.recipes.build(recipe_params)
+
+			if @recipe.save
+				flash[:notice] = "#{@recipe.title} successfully created"
+				redirect_to @recipe
+			else
+				flash[:alert] = "Failed to create recipe"
+				render :new
+			end
 	end
 
 	def update
-		if @recipe.update_attributes(recipe_params)
-			flash[:success] = "Recipe updated"
-			redirect_to @recipe
-		else
-			render 'edit'
-		end
+		@recipe.update_attributes(recipe_params)
+
+			if @recipe.update_attributes(recipe_params)
+				flash[:notice] = "Recipe successfully updated"
+				redirect_to @recipe
+			else
+				flash[:alert] = "Oops, something went wrong"
+				render :edit
+			end
+	end
+
+	def delete
+		@recipe = Recipe.find(params[:product_id])
 	end
 
 	def destroy
 		@recipe.destroy
+		flash[:notice] = "#{@recipe.title} recipe sucessfully deleted"
 		redirect_to recipes_url
 	end
 
@@ -51,10 +60,6 @@ class RecipesController < ApplicationController
 		end
 
 		#Before filters
-
-		# def get_recipe
-		# 	@recipe = Recipe.includes(:ingredients).find(params[:id])
-		# end
 
 		def get_recipe
 			@recipe = Recipe.find(params[:id])

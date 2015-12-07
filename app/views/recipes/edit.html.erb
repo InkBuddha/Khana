@@ -1,7 +1,8 @@
-<div class="row">
-	<div class="small-12 columns">
-		<h1>Edit recipe </h1>
+<% provide(:title, 'Edit Recipe') %>
+<% provide(:button_text, 'Save changes') %>
+<div id="recipe_edit" class="content">
+	<h2>Edit <%= "#{ @recipe.title }" %> </h2>
 
-		<%= render 'form'%>
-	</div>
+		<%= render 'form' %>
+
 </div>

@@ -1,38 +1,32 @@
-<div id="recipes" class="row">
-	<div class="small-12">
-		<div class="row">	
-			<!-- TITLE -->
-			<div class="large-5 columns recipes_items left">
-				<h1><%= @recipe.title %></h1>
-				<p><%= link_to 'Edit recipe', edit_recipe_path(@recipe) %></p>
-				<h4>From: N/A</h4>
-				<ul class="small-block-grid-2">
-					<li><p class="time">Prep: N/A</p></li>
-					<li><p class="time"> Cuisson: N/A</p></li>
-				</ul>
-				<p class="main_ingr">Main ingredient: N/A</p>
-			</div>
+<% provide(:title, "#{@recipe.title} Recipe") %>
+<div id="recipes_show" class='content'>
+	<!-- TITLE -->
+	<aside class="recipe-title">
+		<h3><%= @recipe.title %></h3>
+		<p><%= link_to ('<i class="fa fa-pencil"></i>Edit recipe').html_safe, edit_recipe_path(@recipe) %></p>		
+		<ul>
+			<li><p>From: N/A</p></li>
+			<li><p class="time">Prep: N/A</p></li>
+			<li><p class="time"> Cuisson: N/A</p></li>
+			<li><p class="main_ingr">Main ingredient: N/A</p></li>
+		</ul>			
+
+		<h4>Ingredients:</h4>
+
+		<% @recipe.items.each do |item| %>
+			<ul>
+				<li class='ingredient'>
+					<%= item.ingredient.name %>: <%= item.amount %><%= item.measure %>
+				</li>
+			</ul>
+		<% end %>
+	</aside>
 
 			<!-- PREP DESCRIPTION -->
-			<div class="large-6 columns recipes_items right">
-				<h2>Preparation:</h2>
-				<p class="description"><%= @recipe.description %></p>
-			</div>
-		</div>
+	<section class="recipe-prep">
+		<h4>Preparation:</h4>
+		<p class="description"><%= @recipe.description %></p>
+	</section>
+		
 
-		<!-- INGREDIENT LIST -->
-		<div class="row">
-			<div class="large-4 columns recipes_items">
-				<h2>Ingredients:</h2>
-					<% @recipe.items.each do |item| %>
-						<ul>
-							<li class='ingredient'>
-									<%= item.ingredient.name %>: <%= item.amount %><%= item.measure %>
-							</li>
-						</ul>
-					<% end %>
-			</div>
-		</div>
-	
-	</div>
 </div>

@@ -1,39 +1,37 @@
-<header class="top-bar" data-topbar role="navigation">
-		<ul class="title-area">
-			<!-- TITLE -->
-			<li class="name">
-				<h1><%= link_to "Khana", root_path, id: "logo" %></h1>
-			<li>
-		</ul>
-<!-- NAV SECTION -->
-	<% if logged_in? %>		
-			<nav class="top-bar-section">
-				<ul class="right">
-					<li>
-          	<%= link_to ('<i class="fa fa-calendar"></i> Calendar').html_safe, 
-          							 '#' %>
+<% if logged_in? %> 
+  <div class="header">
+    <h1><%= link_to 'Khana', root_path %></h1>
+  </div>
+  <header class="logged_in">
+  		<nav class="left">
+  			<ul>				
+          <li >
+            <%= link_to "My recipes", recipes_path %>
           </li>
           <li>
-          	<%= link_to ('<i class="fa fa-cutlery"></i> My recipes').html_safe, 
-          							 recipes_path %>
+           	<%= link_to ' Calendar', meals_path %>
           </li>
+
           <li>
-          	<%= link_to ('<i class="fa fa-shopping-cart"></i> Shopping list').html_safe, 
-          							 '#' %>
-          </li>
-          <!-- DROPDOWN SECTION -->
-					<li class="has-dropdown">
-						<a href="#"><%= @current_user.name %>'s account</a>
-						<ul class="dropdown">
-							<li><%= link_to "Profile", current_user %></li>
-							<li><%= link_to "Settings", edit_user_path(current_user) %></li>
-							<li class="divider"></li>
-							<li><%= link_to "Log out", logout_path, method: 'delete' %></li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
-	<% end %>	
-</header>
+            <%= link_to 'Shopping list', 
+            							 '#' %>
+            </li>
+  			</ul>
+  		</nav>
+
+  		<nav class="right">
+  			<ul>
+          <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
+          <li class="last"><%= link_to 'Log Out', logout_path, method: 'delete' %></li>
+        </ul>        
+  		</nav>	      
+  </header>
+  <%= yield(:submenu)  %>
+<% else %>
+  <header class="not_logged_in">
+    <h1><%= link_to 'Khana', root_path  %></h1>
+  </header>
+
+<% end %>
 
 		

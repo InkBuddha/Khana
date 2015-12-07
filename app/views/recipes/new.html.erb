@@ -1,7 +1,7 @@
-<div class="row">
-	<div class="small-12 columns">
-		<h1>New recipe</h1>
+<% provide(:title, 'New Recipe') %>
+<% provide(:button_text, 'Create recipe') %>
+<div id="recipe_new" class='content'>
+	<h2>New recipe</h2>
 
 		<%= render 'form' %>
-	</div>
 </div>
