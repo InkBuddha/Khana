@@ -4,6 +4,9 @@
 		<h2>Sign Up</h2>
 
 <!-- FORM CONTAINER -->	
+		<%= form_for @user do |form| %>
+  		<%= form.file_field :avatar %>
+		<% end %>
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_message' %>
 					<%= f.text_field :name, placeholder: 'User Name', class: 'form_field' %>

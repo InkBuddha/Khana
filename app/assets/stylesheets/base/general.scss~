@@ -19,7 +19,6 @@ body.homepage {
 }
 
 #flash {
-	padding-top: 1em;
 	text-align: center;
 }
 
