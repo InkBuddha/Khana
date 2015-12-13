@@ -20,11 +20,13 @@ header.logged_in {
 			padding-left: 1.5em;
 			height: 75px;
 			line-height: 75px;
-			img {
+			.user-avatar {
+				overflow: hidden;
 				width:75px;
 				border-radius: 100%;
-				overflow: hidden;
-				vertical-align: middle;
+				img {					
+					vertical-align: middle;
+				}
 			}
 			a {
 				color: white;
