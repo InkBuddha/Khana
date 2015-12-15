@@ -133,11 +133,14 @@ body.homepage {
 	.item {
 		padding: 1em;
 	}
+	img {margin-right: 1em;}
 }
 
 // RECIPES > SHOW
 #recipes_show {
 	margin-top: 1.5em;
+
+	ul {list-style: none;}
 	
 	aside, section {
 		@include box-shadow;

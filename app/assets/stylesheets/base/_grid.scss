@@ -27,27 +27,40 @@
 #recipes_show {
 	.recipe-title {
 		@include span-columns(4);
+		margin-bottom: 3em;
 	}
 	.recipe-prep {
 		@include span-columns(8);
 		@include omega();
+		margin-bottom: 3em;
 	}
 }
 
-#recipe_new {
-	@include span-columns(6);
-	@include shift(3);
-	fieldset {
-		
+#recipe_new, #recipe_edit {
+	h2 {
+		@include span-columns(6);
+		@include shift(3);
 	}
-}
-
-#recipe_edit {
-	@include span-columns(6);
-	@include shift(3);
-	fieldset {
-		
+	section {
+		@include span-columns(9);
+		border: 1px solid $dark_brown;
+		border-radius: 5px;
+		padding: 1.5em;
 	}
+	aside {
+		@include span-columns(3);
+		@include omega();
+		border: 1px solid $dark_brown;
+		border-radius: 5px;
+		padding: 1.5em;
+		ul {list-style: none;}
+	}
+	span {
+		margin-top: 1em;
+		text-align: center;
+	}
+	ul {list-style: circle;}
+	li {margin-bottom: 1em;}
 }
 
 #month-calendar {

@@ -3,6 +3,8 @@ class Recipe < ActiveRecord::Base
 	default_scope -> { order(created_at: :desc) }
 	has_many :items, dependent: :destroy
 	has_many :ingredients, through: :items
+	has_attached_file :photo, styles: { medium: "300x300>", thumb: "100x100>"}, default_url: ":style/missing_recipe.png"
+	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
 	accepts_nested_attributes_for :items,
 																reject_if: :all_blank,

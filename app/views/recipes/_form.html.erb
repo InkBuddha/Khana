@@ -3,12 +3,17 @@
 	<fieldset id="recipe_meta">
 		<ul>
 			<li>
-				<%= f.label :title  %> <br>
-				<%= f.text_field :title %>
+				<%= f.label :title  %> 
+				<%= f.text_field :title %> <br>
 			</li>
 			<li>
-				<%= f.label :description  %> <br>
-				<%= f.text_area :description, as: :text, id: 'recipe_description'  %>
+				<%= f.label :description  %> 
+				<%= f.text_area :description, as: :text, id: 'recipe_description'  %><br>
+			</li>
+			<li>
+				<%= f.label :photo %>
+				<%= image_tag @recipe.photo.url(:medium) %>
+				<%= f.file_field :photo %>
 			</li>
 		</ul>
 	</fieldset>
@@ -22,10 +27,10 @@
 					<%= render 'item_fields', f: item %>
 				<% end %>	
 			</ul>
-			<%= link_to_add_association 'add ingredient', f, :items,
-					:wrap_object => Proc.new {|item| item.build_ingredient; item } %>	
+			<%= link_to_add_association ('<i class="fa fa-plus"></i> add ingredient').html_safe, f, :items,
+					:wrap_object => Proc.new {|item| item.build_ingredient; item }, class: 'button_b' %>	
 		</fieldset>
 	</aside>
 			
-		<%= f.submit yield(:button_text), class: 'button' %>
+		<span class="form_container_b"><%= f.submit yield(:button_text), class: 'button' %></span>
 <% end %>

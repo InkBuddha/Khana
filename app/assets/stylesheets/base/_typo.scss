@@ -3,7 +3,10 @@
 @import url(https://fonts.googleapis.com/css?family=Parisienne|Raleway:100|Droid+Serif);
 
 // Global
-h1, h2, h3, h4, h5, h6 {line-height: 1;}
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+	text-transform: capitalize;
+}
 
 a {color: $lime_green;}
 h3 {

@@ -3,6 +3,8 @@
 	<!-- TITLE -->
 	<aside class="recipe-title">
 		<h3><%= @recipe.title %></h3>
+		<%= image_tag @recipe.photo.url(:medium) %>
+
 		<p><%= link_to ('<i class="fa fa-pencil"></i>Edit recipe').html_safe, edit_recipe_path(@recipe) %></p>		
 		<ul>
 			<li><p>From: N/A</p></li>

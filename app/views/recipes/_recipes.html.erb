@@ -1,6 +1,7 @@
 <% @recipes.each do |recipe| %>
 	<ul id="recipe-id">
 		<li class="<%= cycle('even', 'odd') %> item">
+			<%= image_tag recipe.photo.url(:thumb), class: 'left' %>
 			<h3><%= link_to "#{recipe.title}", recipe_path(recipe)  %></h3>
 				<br>
 				<p class="time left">Prep: N/A</p>						
@@ -10,12 +11,12 @@
 				<br>
 
 			<% if logged_in? %>
-				<p><%= link_to ('<i class="fa fa-trash-o"></i> Delete').html_safe, recipe,
+				<p><%= link_to ('<i class="fa fa-times"></i> Delete').html_safe, recipe,
 									remote: true,
 									method: :delete,
 									data: {confirm: 'Are you sure?'},
 									class: 'delere_recipe' %>
-								 | <%= link_to ('<i class="fa fa-pencil"></i> Edit').html_safe, edit_recipe_path(recipe), remote: true %>								 
+								 | <%= link_to ('<i class="fa fa-pencil"></i> Edit').html_safe, edit_recipe_path(recipe) %>								 
 					</p>
 			<% end %>
 		</li>
