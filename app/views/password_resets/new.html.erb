@@ -6,7 +6,7 @@
 			<%= form_for(:password_reset, url: password_resets_path) do |f| %>
 				<%= f.email_field :email, placeholder: 'E-mail', class: 'form_field' %>
 				<br>
-				<%= f.submit "Submit", class: 'button round', class: 'form_field button' %>
+				<%= f.submit "Reset my password", class: 'button round', class: 'form_field button' %>
 			<% end %>
 </div>
 

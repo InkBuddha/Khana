@@ -1,5 +1,9 @@
 <% provide(:title, 'Edit Recipe') %>
 <% provide(:button_text, 'Save changes') %>
+<% content_for(:submenu) do %>
+	<%= render 'subnav'  %>
+<% end %>
+
 <div id="recipe_edit" class="content">
 	<h2>Edit <%= "#{ @recipe.title }" %> </h2>
 

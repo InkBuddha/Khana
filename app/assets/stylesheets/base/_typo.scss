@@ -1,6 +1,6 @@
 // Fonts import
 
-@import url(https://fonts.googleapis.com/css?family=Parisienne|Raleway:100|Droid+Serif);
+@import url(https://fonts.googleapis.com/css?family=Parisienne|Raleway:700,500,100|Droid+Serif);
 
 // Global
 h1, h2, h3, h4, h5, h6 {
@@ -19,17 +19,17 @@ h3 {
 
 // Fonts families
 h1 {font-family: 'Parisienne', cursive;}
-h2 {font-family: 'Raleway';}
+h2 {font-family: 'Raleway'; font-weight: 100;}
 
-body, .button {font-family: 'Droid Serif', serif;}
+body, .button {font-family: 'Raleway'; font-weight: 500;}
 
 #recipe_index {
-	h3 {font-family: 'Raleway';}
+	h3 {font-family: 'Raleway'; font-weight: 100;}
 }
 
 #recipes_show {
-	h1 {font-family: 'Raleway';}
-	h4 {font-family: 'Droid Serif', serif;}
+	h1 {font-family: 'Raleway'; font-weight: 100;}
+	h4 {font-family: 'Raleway'; font-weight: 700;}
 }
 
 

@@ -1,4 +1,4 @@
-User.create!(name: "Example User",
+user1 = User.create!(name: "Example User",
 						 email: "example@example.com",
 						 password: "foobar",
 						 password_confirmation: "foobar",
@@ -77,7 +77,5 @@ item20 = Item.create(recipe_id: 3, ingredient_id: 18, amount: 5, measure: "g")
 item21 = Item.create(recipe_id: 3, ingredient_id: 19, amount: 5, measure: "g")
 item22 = Item.create(recipe_id: 3, ingredient_id: 5, amount: 5, measure: "g")
 
- # Associe ingrédients aux recettes
-# r1.ingredients << [i1, i2, i3, i4, i5, i6, i7, i8, i9]
-# r2.ingredients << [i10, i8, i11, i12, i6]
-# r3.ingredients << [i13, i14, i15, i16, i17, i18, i19, i5]
+ # Associe recettes à user1
+ [r1, r2, r3] << user1

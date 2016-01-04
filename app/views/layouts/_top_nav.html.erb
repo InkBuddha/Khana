@@ -1,28 +1,26 @@
 <% if logged_in? %> 
   <header class="logged_in">
-  		<nav class="left">
-  			<ul>
-          <li class="user-avatar">
-            <%= link_to (image_tag current_user.avatar.url(:thumb)), root_path %>
-          </li>		
-          <li >
-            <%= link_to "My recipes", recipes_path %>
-          </li>
-          <li>
-           	<%= link_to ' Calendar', meals_path %>
-          </li>
-
-          <li>
-            <%= link_to 'Shopping list', 
-            							 '#' %>
+  	<nav class="left">
+  		<ul>
+        <li class="user-avatar">
+          <%= link_to (image_tag current_user.avatar.url(:thumb)), root_path %>
+        </li>		
+        <li >
+          <%= link_to "My recipes", recipes_path %>
+        </li>
+        <li>
+         	<%= link_to ' Calendar', meals_path %>
+        </li>
+        <li>
+          <%= link_to 'Shopping list', '#' %>
             </li>
   			</ul>
   		</nav>
 
   		<nav class="right">
   			<ul>
-          <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
-          <li class="last"><%= link_to 'Log Out', logout_path, method: 'delete' %></li>
+          <!-- <li><%#= link_to 'Settings', edit_user_path(current_user) %></li> -->
+          <li class="last"><%= link_to ('<i class="fa fa-power-off fa-2x"></i>').html_safe, logout_path, method: 'delete' %></li>
         </ul>        
   		</nav>	      
   </header>

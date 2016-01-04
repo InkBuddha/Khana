@@ -1,4 +1,8 @@
 <% provide(:title, "#{@recipe.title} Recipe") %>
+<% content_for(:submenu) do %>
+	<%= render 'subnav'  %>
+<% end %>
+
 <div id="recipes_show" class='content'>
 	<!-- TITLE -->
 	<aside class="recipe-title">

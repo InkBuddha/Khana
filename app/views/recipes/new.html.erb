@@ -1,5 +1,9 @@
 <% provide(:title, 'New Recipe') %>
 <% provide(:button_text, 'Create recipe') %>
+<% content_for(:submenu) do %>
+	<%= render 'subnav'  %>
+<% end %>
+
 <div id="recipe_new" class='content'>
 	<h2>New recipe</h2>
 
