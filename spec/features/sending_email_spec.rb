@@ -12,6 +12,10 @@ feature 'Emailer' do
  #      expect(mail.body.encoded).to have_content("Hi")
  #    end
  #  end
+ 	# before(:each) do
+ 	# 	@user = create(:user)
+ 	# end
+
  	it "emails user when requesting password reset" do
  		user = create(:user)
  		visit login_path

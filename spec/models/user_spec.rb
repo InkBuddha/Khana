@@ -51,16 +51,16 @@ RSpec.describe User, type: :model do
 
 
 	describe "sends password_reset" do
-		let(:user) { Factory(:user) }
+		let(:user) { create(:user) }
 
 		it "generates a unique password_reset_token each time" do
-			user.send_password_reset
+			user.send_password_reset_email
 			last_token = user.password_reset_token
 			user.send_password_reset
 			expect(user.password_reset_token).to_not eq(last_token)
 		end
-		it "saves the time the password reset was sent" do
-			user.send_password_reset
+		it "saves the time the password_reset was sent" do
+			user.send_password_reset_email
 			expect(user.reload.password_reset_sent_at).to be_present
 		end
 	end
